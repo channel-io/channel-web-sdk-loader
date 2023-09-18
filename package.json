@@ -17,7 +17,10 @@
     "channeltalk",
     "channel talk",
     "channel web sdk",
-    "channel web sdk loader"
+    "channel web sdk loader",
+    "channel js sdk",
+    "channel javascript sdk",
+    "channel javascript sdk loader"
   ],
   "author": "Channel Corp.",
   "license": "Apache-2.0",
