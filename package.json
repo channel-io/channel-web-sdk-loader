@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "description": "Channel Web SDK Loader for web",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "dist/index.d.ts"
+    "prepublishOnly": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
