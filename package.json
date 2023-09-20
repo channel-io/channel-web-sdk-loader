@@ -1,0 +1,44 @@
+{
+  "name": "@channel.io/channel-web-sdk-loader",
+  "version": "0.1.0",
+  "description": "Channel Web SDK Loader for web",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/channel-io/channel-web-sdk-loader.git"
+  },
+  "keywords": [
+    "channel",
+    "channel.io",
+    "channel-talk",
+    "channeltalk",
+    "channel talk",
+    "channel web sdk",
+    "channel web sdk loader",
+    "channel js sdk",
+    "channel javascript sdk",
+    "channel javascript sdk loader"
+  ],
+  "author": "Channel Corp.",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/channel-io/channel-web-sdk-loader/issues"
+  },
+  "homepage": "https://github.com/channel-io/channel-web-sdk-loader#readme",
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "typescript": "^5.2.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
