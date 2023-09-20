@@ -32,5 +32,14 @@
   "homepage": "https://github.com/channel-io/channel-web-sdk-loader#readme",
   "dependencies": {
     "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
