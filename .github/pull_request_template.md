@@ -14,6 +14,8 @@
 - [ ] I tested the changes in various browsers. (or didn't have to)
   - Windows: Chrome, Edge, (Optional) Firefox
   - macOS: Chrome, Edge, Safari, (Optional) Firefox
+  - Android: Chrome, Samsung Internet
+  - iOS: Safari, Chrome,
 
 ## Related Issue
 <!-- Please link to issue if one exists -->
