@@ -4,11 +4,16 @@
   "description": "Channel Web SDK Loader for web",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "prepublishOnly": "tsc -d",
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git-cz"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/channel-io/channel-web-sdk-loader.git"
@@ -25,6 +30,9 @@
     "channel javascript sdk",
     "channel javascript sdk loader"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Channel Corp.",
   "license": "Apache-2.0",
   "bugs": {
