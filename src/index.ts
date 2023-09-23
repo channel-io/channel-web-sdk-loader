@@ -38,7 +38,7 @@ type Appearance = 'light' | 'dark' | 'system' | null;
 /**
  * Load the Channel SDK script.
  */
-function loadScript() {
+export function loadScript() {
   (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.")}var ch:IChannelIO=function(){ch.c?.(arguments)};ch.q=[];ch.c=function(args){ch.q?.push(args)};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x)}}if(document.readyState==="complete"){l()}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l)}})();
 }
 
@@ -68,14 +68,14 @@ interface BootOption {
  * @see https://developers.channel.io/docs/web-boot-option
  * @see https://developers.channel.io/docs/web-user-object
  */
-function boot(option: BootOption, callback?: Callback) {
+export function boot(option: BootOption, callback?: Callback) {
   window.ChannelIO?.('boot', option, callback);
 }
 
 /**
  * Stop all operations of the SDK and initialize internal data.
  */
-function shutdown() {
+export function shutdown() {
   window.ChannelIO?.('shutdown');
 }
 
@@ -83,7 +83,7 @@ function shutdown() {
  * Show the messenger.
  * @see https://developers.channel.io/docs/glossary#messenger
  */
-function showMessenger() {
+export function showMessenger() {
   window.ChannelIO?.('showMessenger');
 }
 
@@ -91,7 +91,7 @@ function showMessenger() {
  * Hide the messenger.
  * @see https://developers.channel.io/docs/glossary#messenger
  */
-function hideMessenger() {
+export function hideMessenger() {
   window.ChannelIO?.('hideMessenger');
 }
 
@@ -103,7 +103,7 @@ function hideMessenger() {
  * @param {string | number | undefined} chatId
  * @param {string | undefined} message - Message to enter in the input
  */
-function openChat(chatId?: string | number, message?: string) {
+export function openChat(chatId?: string | number, message?: string) {
   window.ChannelIO?.('openChat', chatId, message);
 }
 
@@ -118,7 +118,7 @@ interface EventProperty {
  * @param {EventProperty | undefined} eventProperty - The property of the event.
  * @see https://developers.channel.io/docs/event
  */
-function track(eventName: string, eventProperty?: EventProperty) {
+export function track(eventName: string, eventProperty?: EventProperty) {
   window.ChannelIO?.('track', eventName, eventProperty);
 }
 
@@ -126,7 +126,7 @@ function track(eventName: string, eventProperty?: EventProperty) {
  * Register a callback invoked when the messenger is shown.
  * @param {Function} callback
  */
-function onShowMessenger(callback: () => void) {
+export function onShowMessenger(callback: () => void) {
   window.ChannelIO?.('onShowMessenger', callback);
 }
 
@@ -134,7 +134,7 @@ function onShowMessenger(callback: () => void) {
  * Register a callback invoked when the messenger is hidden.
  * @param {Function} callback
  */
-function onHideMessenger(callback: () => void) {
+export function onHideMessenger(callback: () => void) {
   window.ChannelIO?.('onHideMessenger', callback);
 }
 
@@ -149,7 +149,7 @@ type BadegChangedCallback = (unread: number, alert: number) => void;
  * @see https://developers.channel.io/docs/glossary#channel-button
  * @see https://developers.channel.io/docs/web-customization
  */
-function onBadgeChanged(callback: BadegChangedCallback) {
+export function onBadgeChanged(callback: BadegChangedCallback) {
   window.ChannelIO?.('onBadgeChanged', callback);
 }
 
@@ -157,7 +157,7 @@ function onBadgeChanged(callback: BadegChangedCallback) {
  * Register a callback invoked when a chat is created.
  * @param {Function} callback 
  */
-function onChatCreated(callback: () => void) {
+export function onChatCreated(callback: () => void) {
   window.ChannelIO?.('onChatCreated', callback);
 }
 
@@ -172,7 +172,7 @@ type FollowUpChangedCallback = (profile: FollowUpProfile) => void;
  * Register a callback invoked when the user changes the user’s profile.
  * @param {FollowUpChangedCallback} callback - The callback invoked when the user changes the user’s profile. It receives the profile object as the argument.
  */
-function onFollowUpChanged(callback: FollowUpChangedCallback) {
+export function onFollowUpChanged(callback: FollowUpChangedCallback) {
   window.ChannelIO?.('onFollowUpChanged', callback);
 }
 
@@ -185,7 +185,7 @@ type UrlClickedCallback = (url: string) => void;
  *   - Link button/text sent by manager in chat
  * @param {UrlClickedCallback} callback - The callback invoked when the user clicks a link. It receives the URL of the link as the argument.
  */
-function onUrlClicked(callback: UrlClickedCallback) {
+export function onUrlClicked(callback: UrlClickedCallback) {
   window.ChannelIO?.('onUrlClicked', callback);
 }
 
@@ -198,7 +198,7 @@ function onUrlClicked(callback: UrlClickedCallback) {
  *   - onFollowUpChanged
  *   - onUrlClicked
  */
-function clearCallbacks() {
+export function clearCallbacks() {
   window.ChannelIO?.('clearCallbacks');
 }
 
@@ -241,7 +241,7 @@ interface UpdateUserInfo {
  * @param {Callback} callback - When it fails, the callback passes an error object at the first argument, null at the second argument. When it succeeds, the callback passes null at the first argument, an user object at the second argument.
  * @see https://developers.channel.io/docs/web-user-object
  */
-function updateUser(userInfo: UpdateUserInfo, callback?: Callback) {
+export function updateUser(userInfo: UpdateUserInfo, callback?: Callback) {
   window.ChannelIO?.('updateUser', userInfo, callback);
 }
 
@@ -251,7 +251,7 @@ function updateUser(userInfo: UpdateUserInfo, callback?: Callback) {
  * @param {Callback} callback - If it fails, the callback passes an error object at the first argument, null at the second argument. If it succeeds, the callback passes null at the first argument, a user object at the second argument.
  * @see https://developers.channel.io/docs/web-user-object
  */
-function addTags(tags: string[], callback?: Callback) {
+export function addTags(tags: string[], callback?: Callback) {
   window.ChannelIO?.('addTags', tags, callback);
 }
 
@@ -261,7 +261,7 @@ function addTags(tags: string[], callback?: Callback) {
  * @param {Callback} callback - If fails, the callback passes an error object at the first argument, null at the second argument. If succeeds, the callback passes null at the first argument, a user object at the second argument.
  * @see https://developers.channel.io/docs/web-user-object
  */
-function removeTags(tags: string[], callback?: Callback) {
+export function removeTags(tags: string[], callback?: Callback) {
   window.ChannelIO?.('removeTags', tags, callback);
 }
 
@@ -272,7 +272,7 @@ function removeTags(tags: string[], callback?: Callback) {
  * @see https://developers.channel.io/docs/page
  * @see https://developers.channel.io/docs/canonical-url
  */
-function setPage(page: string) {
+export function setPage(page: string) {
   window.ChannelIO?.('setPage', page);
 }
 
@@ -282,7 +282,7 @@ function setPage(page: string) {
  * @see https://developers.channel.io/docs/page
  * @see https://developers.channel.io/docs/canonical-url
  */
-function resetPage() {
+export function resetPage() {
   window.ChannelIO?.('resetPage');
 }
 
@@ -292,7 +292,7 @@ function resetPage() {
  * - Only when you set hideChannelButtonOnBoot to true or call hideChannelButton, you should manually execute showChannelButton.
  * @see https://developers.channel.io/docs/glossary#channel-button
  */
-function showChannelButton() {
+export function showChannelButton() {
   window.ChannelIO?.('showChannelButton');
 }
 
@@ -300,7 +300,7 @@ function showChannelButton() {
  * Hide the channel button.
  * @see https://developers.channel.io/docs/glossary#channel-button
  */
-function hideChannelButton() {
+export function hideChannelButton() {
   window.ChannelIO?.('hideChannelButton');
 }
 
@@ -308,31 +308,6 @@ function hideChannelButton() {
  * Set the appearance of the theme.
  * @param {Appearance} appearance
  */
-function setAppearance(appearance: Appearance) {
+export function setAppearance(appearance: Appearance) {
   window.ChannelIO?.('setAppearance', appearance);
-}
-
-export default {
-  loadScript,
-  boot,
-  shutdown,
-  showMessenger,
-  hideMessenger,
-  openChat,
-  track,
-  onShowMessenger,
-  onHideMessenger,
-  onBadgeChanged,
-  onChatCreated,
-  onFollowUpChanged,
-  onUrlClicked,
-  clearCallbacks,
-  updateUser,
-  addTags,
-  removeTags,
-  setPage,
-  resetPage,
-  showChannelButton,
-  hideChannelButton,
-  setAppearance,
 }
