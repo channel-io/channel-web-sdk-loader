@@ -11,19 +11,21 @@ npm install @channel-io/channel-web-sdk-loader
 
 ## Usage
 
-Import ChannelService
+### Step1: Import ChannelService
 ```typescript
-import ChannelService from '@channel-io/channel-web-sdk-loader';
+import * as ChannelService from '@channel-io/channel-web-sdk-loader';
 ```
 
-Initialize Channel SDK (load channel web sdk)
+### Step2: Load Channel Web SDK
 ```typescript
-ChannelService.init()
+ChannelService.loadScript()
 ```
 
-Boot Channel SDK
+### Step3: Initialize Channel SDK
 ```typescript
-ChannelService.boot()
+ChannelService.boot({
+  pluginKey: 'YOUR_PLUGIN_KEY'
+})
 ```
 
 
