@@ -1,8 +1,9 @@
 # channel-web-sdk-loader
-> Channel Web SDK Loader
+> Official Channel Web SDK Loader
 
-## Documentation
-- [API Reference](https://developers.channel.io/docs/web-channelio)
+## Links
+- [Official SDK Docs](https://developers.channel.io/docs/web-channelio)
+- [(to-do)TypeDoc](https://developers.channel.io/docs/web-channelio)
 
 ## Install
 ```bash
@@ -21,12 +22,12 @@ import * as ChannelService from '@channel-io/channel-web-sdk-loader';
 ChannelService.loadScript()
 ```
 
-### Step3: Initialize Channel SDK
+### Step3: Initialize Channel Web SDK
 ```typescript
 ChannelService.boot({
   pluginKey: 'YOUR_PLUGIN_KEY'
 })
 ```
 
-
-## Example
+## API References
+- [(to-do)TypeDoc](https://developers.channel.io/docs/web-channelio)
