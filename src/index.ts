@@ -11,29 +11,88 @@ interface IChannelIO {
   (...args: any): void;
 }
 
-interface Callback {
-  (error: Error | null, user: CallbackUser | null): void;
-}
-
-interface CallbackUser {
+/**
+ * @see https://developers.channel.io/docs/web-user-object
+ */
+export interface User {
+  /**
+   * - The number of important notifications that the user has not read.
+   * - It is displayed as a number on the channel button.
+   * @see https://developers.channel.io/docs/glossary#channel-button
+   */
   alert: number
+  /** The avatar image URL of a user. */
   avatarUrl: string;
+  /** The id of a user */
   id: string;
+  /**
+   * - The language of a user.
+   * - Used for translation.
+   * - Set by updateUser and language of boot option.
+   * - Following 32 languages supported.
+   *   - 'de'(German), 'hi'(Hindi), 'no'(Norwegian), 'ru'(Russian), 'fi'(Finnish), 'pt'(Portuguese), 'hr'(Croatian), 'fr'(French), 'hu'(Hungarian), 'uk'(Ukrainian), 'sk'(Slovak), 'ca'(Catalan), 'sv'(Swedish), 'ko'(Korean), 'id'(Indonesian), 'ms'(Malay), 'el'(Greek), 'en'(English), 'it'(Italian), 'es'(Spanish), 'he'(Hebrew), 'zh'(Chinese), 'cs'(Czech), 'ar'(Arabic), 'vi'(Vietnamese),'th'(Thai), 'ja'(Japanese), 'pl'(Polish), 'ro'(Romanian), 'da'(Danish), 'nl'(Dutch), 'tr'(Turkish)
+   */
   language: string;
+  /**
+   * - The id used for identifying a member user.
+   * - If you set memberId in the boot option, the user is regarded as a member user.
+   */
   memberId: string;
+  /**
+   * - The name of a user
+   * - Set by updateUser
+   */
   name?: string;
+  /**
+   * - A user's profile information.
+   * - Set by updateUser or profile of boot option.
+   */
   profile?: Profile | null;
+  /**
+   * - The tags of a user.
+   * - Always lowercase.
+   * - Set by updateUser, addTags, or removeTags.
+   */
   tags?: string[] | null;
+  /**
+   * - The number of all unread notifications the user has not read.
+   * - It includes the number of alert. It is displayed as a red dot on the channel button.
+   * @see https://developers.channel.io/docs/glossary#channel-button
+   */
   unread: number;
+  /**
+   * - Whether to unsubscribe the marketing email.
+   * - Set by updateUser or unsubscribeEmail of boot option.
+   */
   unsubscribeEmail: boolean;
+  /**
+   * - Whether to unsubscribe the marketing email.
+   * - Set by updateUser or unsubscribeTexting of boot option.
+   */
   unsubscribeTexting: boolean;
 }
 
-interface Profile {
+/**
+ * - When it fails, the callback passes an error object at the first argument, null at the second argunent.
+ * - When it succeeds, the callback passes null at the first argument, an user object at the second argument.
+ */
+export type Callback = (error: Error | null, user: User | null) => void;
+
+/**
+ * - A User’s profile information.
+ * - Set by updateUser or profile of boot option.
+ */
+export interface Profile {
   [key: string]: string | number | boolean | null;
 }
 
-type Appearance = 'light' | 'dark' | 'system' | null;
+/**
+ * - light: Use the light theme.
+ * - dark: Use the dark theme.
+ * - system: Follow the System theme.
+ * - null: Follow the desk's theme setting.
+ */
+export type Appearance = 'light' | 'dark' | 'system' | null;
 
 /**
  * Load the Channel SDK script.
@@ -42,23 +101,90 @@ export function loadScript() {
   (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.")}var ch:IChannelIO=function(){ch.c?.(arguments)};ch.q=[];ch.c=function(args){ch.q?.push(args)};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x)}}if(document.readyState==="complete"){l()}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l)}})();
 }
 
-interface BootOption {
+/** @see https://developers.channel.io/docs/web-boot-option */
+export interface BootOption {
+  /**
+   * - Set the initial appearance of the theme.
+   * - The default value is null.
+   */
   appearance?: Appearance;
+  /**
+   * - string	The CSS Selector to select custom launcher.
+   * - Use when you customize default chat button.
+   * @see https://developers.channel.io/docs/web-customization
+   */
   customLauncherSelector?: string;
+  /**
+   * - Set whether to hide the default chat button.
+   * - The default value is false.
+   */
   hideChannelButtonOnBoot?: boolean;
+  /**
+   * - Set whether to hide the marketing pop-ups and the message alarm pop-ups.
+   * - The default value is false.
+   */
   hidePopup?: boolean;
-  language?: string;
+  /**
+   * - Set the default value of the language.
+   * - Texts differ based on the language.
+   * - When a user is created newly, the user’s language is set as the language.
+   * - language doesn’t change the user’s language already created.
+   */
+  language?: 'en' | 'ko' | 'ja';
+  /** Set the hashed value of the memberId using HMAC-SHA256. */
   memberHash?: string;
+  /**
+   * The id of member user.
+   * @see https://developers.channel.io/docs/glossary#member-user
+   */
   memberId?: string;
+  /**
+   * The plugin key of your channel.
+   * @see https://developers.channel.io/docs/sdk#get-a-plugin-key
+   */
   pluginKey: string;
+  /**
+   * Set the user’s profile.
+   * @see https://developers.channel.io/docs/web-user-object#profile
+   */
   profile?: Profile;
+  /**
+   * - Set whether to track the default event(PageView) or not.
+   * - The default value is true.
+   * @see https://developers.channel.io/docs/event
+   */
   trackDefaultEvent?: boolean;
+  /**
+   * - Set whether to track the UTM source and referrer or not.
+   * - The default value is true.
+   * @see https://support.google.com/analytics/answer/1033863#zippy=%2Cin-this-article
+   * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer
+   */
   trackUtmSource?: boolean;
+  /**
+   * - Set whether to unsubscribe marketing email and SMS for the user.
+   * - The default value is false.
+   */
   unsubscribe?: boolean;
+  /**
+   * - Set whether to unsubscribe marketing email for the user.
+   * - The default value is false.
+   */
   unsubscribeEmail?: boolean;
+  /**
+   * - Set whether to unsubscribe marketing SMS for the user.
+   * - The default value is false.
+   */
   unsubscribeTexting?: boolean;
+  /**
+   * - Set the z-index of the elements made by the SDK.
+   * - Applied at chat button, messenger, and marketing pop-up.
+   * - The default value is 10000000.
+   * @see https://developers.channel.io/docs/glossary#messenger
+   */
   zIndex?: number;
 }
+
 /**
  * - Initialize for the SDK.
  * - Channel button shows up, and features like marketing pop-up are ready to operate.
@@ -107,7 +233,7 @@ export function openChat(chatId?: string | number, message?: string) {
   window.ChannelIO?.('openChat', chatId, message);
 }
 
-interface EventProperty {
+export interface EventProperty {
   [key: string]: string | number | boolean | null;
 }
 /**
@@ -139,17 +265,18 @@ export function onHideMessenger(callback: () => void) {
 }
 
 /**
- * - unread is the number of all unread notifications the user has not read. It includes the number of alert. It is displayed as a red dot on the channel button.
- * - alert is the number of important notifications that the user has not read. It is displayed as a number on the channel button.
+ * @param {number} unread - unread is the number of all unread notifications the user has not read. It includes the number of alert. It is displayed as a red dot on the channel button.
+ * @param {number} alert - alert is the number of important notifications that the user has not read. It is displayed as a number on the channel button.
+ * @see https://developers.channel.io/docs/web-customization
  */
-type BadegChangedCallback = (unread: number, alert: number) => void;
+export type BadgeChangedCallback = (unread: number, alert: number) => void;
 /**
  * Register a callback invoked when the count of messages that the user has not yet read.
- * @param {BadegChangedCallback} callback
+ * @param {BadgeChangedCallback} callback
  * @see https://developers.channel.io/docs/glossary#channel-button
  * @see https://developers.channel.io/docs/web-customization
  */
-export function onBadgeChanged(callback: BadegChangedCallback) {
+export function onBadgeChanged(callback: BadgeChangedCallback) {
   window.ChannelIO?.('onBadgeChanged', callback);
 }
 
@@ -161,13 +288,15 @@ export function onChatCreated(callback: () => void) {
   window.ChannelIO?.('onChatCreated', callback);
 }
 
-interface FollowUpProfile {
+export interface FollowUpProfile {
+  /** The name of a user. */
   name?: string | null;
   /** The mobile number of a user. It follows E.164 format. */
   mobileNumber?: string | null;
+  /** The email of a user. */
   email?: string | null;
 }
-type FollowUpChangedCallback = (profile: FollowUpProfile) => void;
+export type FollowUpChangedCallback = (profile: FollowUpProfile) => void;
 /**
  * Register a callback invoked when the user changes the user’s profile.
  * @param {FollowUpChangedCallback} callback - The callback invoked when the user changes the user’s profile. It receives the profile object as the argument.
@@ -177,7 +306,7 @@ export function onFollowUpChanged(callback: FollowUpChangedCallback) {
 }
 
 
-type UrlClickedCallback = (url: string) => void;
+export type UrlClickedCallback = (url: string) => void;
 /**
  * - Register a callback invoked when the user clicks a link.
  * - The links that the user can click include the following list.
@@ -202,7 +331,7 @@ export function clearCallbacks() {
   window.ChannelIO?.('clearCallbacks');
 }
 
-interface UpdateUserInfo {
+export interface UpdateUserInfo {
   /**
    * - If language is ‘ko’ or ‘ja’, UI text inside ChannelTalk changes with that language.
    * - Otherwise, UI text is set with English.
