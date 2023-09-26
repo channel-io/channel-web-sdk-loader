@@ -6,8 +6,6 @@ on:
       - main # Adjust this to your project's default branch if different
     types: [opened, synchronize]
 
-permissions:
-  contents: write
 jobs:
   generate_and_deploy:
 
