@@ -1,10 +1,9 @@
 name: Generate and Deploy Typedoc
 
 on:
-  pull_request:
+  push:
     branches:
-      - main # Adjust this to your project's default branch if different
-    types: [opened, synchronize]
+      - gh-pages
 
 jobs:
   generate_and_deploy:
