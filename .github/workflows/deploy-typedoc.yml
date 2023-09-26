@@ -8,6 +8,8 @@ on:
 
 jobs:
   generate_and_deploy:
+    permissions:
+      contents: write
 
     runs-on: ubuntu-latest
 
