@@ -6,10 +6,10 @@ on:
       - main # Adjust this to your project's default branch if different
     types: [opened, synchronize]
 
+permissions:
+  contents: write
 jobs:
   generate_and_deploy:
-    permissions:
-      contents: write
 
     runs-on: ubuntu-latest
 
@@ -29,7 +29,7 @@ jobs:
       run: npm run build:typedoc  # Adjust the paths as necessary
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v3.9.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs  # Adjust the folder name as necessary
