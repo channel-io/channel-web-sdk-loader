@@ -3,7 +3,7 @@
 
 ## Links
 - [Official SDK Docs](https://developers.channel.io/docs/web-channelio)
-- [(to-do)TypeDoc](https://developers.channel.io/docs/web-channelio)
+- [TypeDoc](https://channel-io.github.io/channel-web-sdk-loader)
 
 ## Install
 ```bash
@@ -30,4 +30,4 @@ ChannelService.boot({
 ```
 
 ## API References
-- [(to-do)TypeDoc](https://developers.channel.io/docs/web-channelio)
+- [TypeDoc](https://channel-io.github.io/channel-web-sdk-loader)
