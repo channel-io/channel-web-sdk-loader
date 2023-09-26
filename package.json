@@ -8,7 +8,8 @@
   "scripts": {
     "prepublishOnly": "tsc -d",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "build:typedoc": "typedoc src/index.ts"
   },
   "files": [
     "dist",
