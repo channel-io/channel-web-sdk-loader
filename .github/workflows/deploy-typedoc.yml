@@ -1,7 +1,7 @@
 name: Generate and Deploy Typedoc
 
 on:
-  push:
+  pull_request:
     branches:
       - main # Adjust this to your project's default branch if different
 
