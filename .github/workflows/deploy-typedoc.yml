@@ -1,0 +1,32 @@
+name: Generate and Deploy Typedoc
+
+on:
+  push:
+    branches:
+      - main # Adjust this to your project's default branch if different
+
+jobs:
+  generate_and_deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14' # You can specify another version
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Generate Typedoc
+      run: npm run build:typedoc  # Adjust the paths as necessary
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs  # Adjust the folder name as necessary
