@@ -3,7 +3,7 @@ name: Generate and Deploy Typedoc
 on:
   push:
     branches:
-      - main # Adjust this to your project's default branch if different
+      - main
 
 jobs:
   generate_and_deploy:
