@@ -21,7 +21,11 @@
 </ul>
 <a id="md:install" class="tsd-anchor"></a><h2><a href="#md:install">Install</a></h2><pre><code class="language-bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@channel-io/channel-web-sdk-loader</span>
 </code><button>Copy</button></pre>
-<a id="md:usage" class="tsd-anchor"></a><h2><a href="#md:usage">Usage</a></h2><a id="md:step1-import-channelservice" class="tsd-anchor"></a><h3><a href="#md:step1-import-channelservice">Step1: Import ChannelService</a></h3><pre><code class="language-typescript"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-4">*</span><span class="hl-1"> </span><span class="hl-3">as</span><span class="hl-1"> </span><span class="hl-5">ChannelService</span><span class="hl-1"> </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@channel-io/channel-web-sdk-loader&#39;</span><span class="hl-1">;</span>
+<a id="md:usage" class="tsd-anchor"></a><h2><a href="#md:usage">Usage</a></h2><blockquote>
+<p>⚠️ <strong>Use the SDK on client-side only.</strong>
+You can’t execute the SDK beforehand on the server-side.</p>
+</blockquote>
+<a id="md:step1-import-channelservice" class="tsd-anchor"></a><h3><a href="#md:step1-import-channelservice">Step1: Import ChannelService</a></h3><pre><code class="language-typescript"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-4">*</span><span class="hl-1"> </span><span class="hl-3">as</span><span class="hl-1"> </span><span class="hl-5">ChannelService</span><span class="hl-1"> </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@channel-io/channel-web-sdk-loader&#39;</span><span class="hl-1">;</span>
 </code><button>Copy</button></pre>
 <a id="md:step2-load-channel-web-sdk" class="tsd-anchor"></a><h3><a href="#md:step2-load-channel-web-sdk">Step2: Load Channel Web SDK</a></h3><pre><code class="language-typescript"><span class="hl-5">ChannelService</span><span class="hl-1">.</span><span class="hl-0">loadScript</span><span class="hl-1">()</span>
 </code><button>Copy</button></pre>
