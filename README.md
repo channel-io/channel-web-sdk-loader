@@ -11,6 +11,8 @@ npm install @channel-io/channel-web-sdk-loader
 ```
 
 ## Usage
+> ⚠️ **Use the SDK on client-side only.**
+You can’t execute the SDK beforehand on the server-side.
 
 ### Step1: Import ChannelService
 ```typescript
