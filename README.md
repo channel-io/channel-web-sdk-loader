@@ -12,7 +12,7 @@
 
 ## Install
 ```bash
-npm install @channel-io/channel-web-sdk-loader
+npm install @channel.io/channel-web-sdk-loader
 ```
 
 ## Usage
