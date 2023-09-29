@@ -35,6 +35,7 @@ ChannelService.boot({
   pluginKey: 'YOUR_PLUGIN_KEY'
 })
 ```
+@see https://developers.channel.io/docs/sdk#get-a-plugin-key
 
 ## API References
 - [TypeDoc](https://channel-io.github.io/channel-web-sdk-loader/)
