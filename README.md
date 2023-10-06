@@ -21,7 +21,7 @@ You can’t execute the SDK beforehand on the server-side.
 
 ### Step1: Import ChannelService
 ```typescript
-import * as ChannelService from '@channel-io/channel-web-sdk-loader';
+import * as ChannelService from '@channel.io/channel-web-sdk-loader';
 ```
 
 ### Step2: Load Channel Web SDK
@@ -35,7 +35,7 @@ ChannelService.boot({
   pluginKey: 'YOUR_PLUGIN_KEY'
 })
 ```
-@see https://developers.channel.io/docs/sdk#get-a-plugin-key
+- You can get a plugin key from desk app. [See guide docs](https://developers.channel.io/docs/sdk#get-a-plugin-key)
 
 ## API References
 - [TypeDoc](https://channel-io.github.io/channel-web-sdk-loader/)
