@@ -99,7 +99,7 @@ const isSSR = typeof window === 'undefined';
 /**
  * - Load the Channel SDK script.
  * - This method is only executable on browser.
- * - You can’t execute this method on the server-side.
+ * - If Channel SDK script is already loaded, this method does nothing.
  */
 export function loadScript() {
   if(isSSR) {
@@ -110,7 +110,7 @@ export function loadScript() {
   (function() {
     var w = window;
     if (w.ChannelIO) {
-      return w.console.error('ChannelIO script included twice.');
+      return;
     }
     var ch: IChannelIO = function() {
       ch.c?.(arguments);
