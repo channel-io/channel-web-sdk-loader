@@ -1,6 +1,6 @@
 {
   "name": "@channel.io/channel-web-sdk-loader",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Channel Web SDK Loader for web",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
