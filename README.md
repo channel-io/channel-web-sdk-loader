@@ -7,7 +7,7 @@
 > Official Channel Web SDK Loader
 
 ## Links
-- [Official SDK Docs](https://developers.channel.io/docs/web-channelio)
+- [Official Developer Documentation](https://developers.channel.io/docs/web-channelio)
 - [TypeDoc](https://channel-io.github.io/channel-web-sdk-loader/)
 
 ## Install
@@ -16,8 +16,7 @@ npm install @channel.io/channel-web-sdk-loader
 ```
 
 ## Usage
-> ⚠️ **Use the SDK on client-side only.**
-You can’t execute the SDK beforehand on the server-side.
+> ⚠️ The SDK is intended for client-side use only and should not be executed on the server-side.
 
 ### Step1: Import ChannelService
 ```typescript
@@ -35,7 +34,8 @@ ChannelService.boot({
   pluginKey: 'YOUR_PLUGIN_KEY'
 })
 ```
-- You can get a plugin key from desk app. [See guide docs](https://developers.channel.io/docs/sdk#get-a-plugin-key)
+- You can obtain a [plugin key](https://developers.channel.io/docs/web-boot-option#pluginkey) from the [Desk application](https://developers.channel.io/docs/glossary#desk).
+- For more details, please check out [the official documentation](https://developers.channel.io/docs/sdk#get-a-plugin-key).
 
 ## API References
 - [TypeDoc](https://channel-io.github.io/channel-web-sdk-loader/)
