@@ -16,6 +16,8 @@
 <li><a href="User.html">User</a></li></ul>
 <h1>Interface User</h1></div>
 <section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>Represents user information.</p>
+</div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-user-object">https://developers.channel.io/docs/web-user-object</a></p>
 </div></section>
@@ -24,7 +26,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">User</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L17">index.ts:17</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L18">index.ts:18</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -49,40 +51,40 @@
 <section class="tsd-panel tsd-member"><a id="alert" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>alert</span><a href="#alert" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">alert</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>The number of important notifications that the user has not read.</li>
-<li>It is displayed as a number on the channel button.</li>
+<div class="tsd-comment tsd-typography"><p>The number of important notifications that are unread.</p>
+<ul>
+<li>A numerical indicator is displayed on the channel button to signify this count.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-user-object#alert">https://developers.channel.io/docs/web-user-object#alert</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L23">index.ts:23</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L24">index.ts:24</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="avatarUrl" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>avatar<wbr/>Url</span><a href="#avatarUrl" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">avatar<wbr/>Url</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>The avatar image URL of a user.</p>
+<div class="tsd-comment tsd-typography"><p>URL representing the user&#39;s avatar image.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L25">index.ts:25</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L27">index.ts:27</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="id" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>id</span><a href="#id" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">id</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>The id of a user</p>
+<div class="tsd-comment tsd-typography"><p>Unique identifier for the user.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L27">index.ts:27</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L30">index.ts:30</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="language" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>language</span><a href="#language" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">language</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>The language of a user.</li>
-<li>Used for translation.</li>
-<li>Set by updateUser and language of boot option.</li>
-<li>Following 32 languages supported.<ul>
+<div class="tsd-comment tsd-typography"><p>The language setting for the user.</p>
+<ul>
+<li>Utilized for translation purposes.</li>
+<li>Configurable via the <code>updateUser</code> method or the language <code>boot</code> option.</li>
+<li>Supports the following 32 languages:<ul>
 <li>&#39;de&#39;(German), &#39;hi&#39;(Hindi), &#39;no&#39;(Norwegian), &#39;ru&#39;(Russian), &#39;fi&#39;(Finnish), &#39;pt&#39;(Portuguese), &#39;hr&#39;(Croatian), &#39;fr&#39;(French), &#39;hu&#39;(Hungarian), &#39;uk&#39;(Ukrainian), &#39;sk&#39;(Slovak), &#39;ca&#39;(Catalan), &#39;sv&#39;(Swedish), &#39;ko&#39;(Korean), &#39;id&#39;(Indonesian), &#39;ms&#39;(Malay), &#39;el&#39;(Greek), &#39;en&#39;(English), &#39;it&#39;(Italian), &#39;es&#39;(Spanish), &#39;he&#39;(Hebrew), &#39;zh&#39;(Chinese), &#39;cs&#39;(Czech), &#39;ar&#39;(Arabic), &#39;vi&#39;(Vietnamese),&#39;th&#39;(Thai), &#39;ja&#39;(Japanese), &#39;pl&#39;(Polish), &#39;ro&#39;(Romanian), &#39;da&#39;(Danish), &#39;nl&#39;(Dutch), &#39;tr&#39;(Turkish)</li>
 </ul>
 </li>
@@ -92,99 +94,99 @@
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-user-object#language">https://developers.channel.io/docs/web-user-object#language</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L36">index.ts:36</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L40">index.ts:40</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="memberId" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>member<wbr/>Id</span><a href="#memberId" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">member<wbr/>Id</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>The id used for identifying a member user.</li>
-<li>If you set memberId in the boot option, the user is regarded as a member user.</li>
+<div class="tsd-comment tsd-typography"><p>Unique identifier for member user.</p>
+<ul>
+<li>If <code>memberId</code> is specified in the boot option, the user is considered a member.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-user-object#memberid">https://developers.channel.io/docs/web-user-object#memberid</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L42">index.ts:42</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L47">index.ts:47</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="name" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>The name of a user</li>
-<li>Set by updateUser</li>
+<div class="tsd-comment tsd-typography"><p>The user&#39;s name.</p>
+<ul>
+<li>Configurable via the <code>updateUser</code> method.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-user-object#name">https://developers.channel.io/docs/web-user-object#name</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L48">index.ts:48</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L54">index.ts:54</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="profile" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>profile</span><a href="#profile" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">profile</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="Profile.html" class="tsd-signature-type tsd-kind-interface">Profile</a></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>A user&#39;s profile information.</li>
-<li>Set by updateUser or profile of boot option.</li>
+<div class="tsd-comment tsd-typography"><p>The user&#39;s profile information.</p>
+<ul>
+<li>Configurable via the <code>updateUser</code> method or the profile boot option.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-user-object#profile">https://developers.channel.io/docs/web-user-object#profile</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L54">index.ts:54</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L61">index.ts:61</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="tags" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>tags</span><a href="#tags" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">tags</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>The tags of a user.</li>
-<li>Always lowercase.</li>
-<li>Set by updateUser, addTags, or removeTags.</li>
+<div class="tsd-comment tsd-typography"><p>An array of tags associated with the user.</p>
+<ul>
+<li>All tags are in lowercase.</li>
+<li>Configurable via the <code>updateUser</code>, <code>addTags</code>, or <code>removeTags</code> methods.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-user-object#tags">https://developers.channel.io/docs/web-user-object#tags</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L61">index.ts:61</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L69">index.ts:69</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="unread" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>unread</span><a href="#unread" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">unread</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>The number of all unread notifications the user has not read.</li>
-<li>It includes the number of alert. It is displayed as a red dot on the channel button.</li>
+<div class="tsd-comment tsd-typography"><p>The total count of unread notifications for the user.</p>
+<ul>
+<li>If you have &#39;unread&#39; notifications but no &#39;alert&#39;, a red dot is displayed on the channel button to signify unread messages.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-user-object#unread">https://developers.channel.io/docs/web-user-object#unread</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L67">index.ts:67</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L76">index.ts:76</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="unsubscribeEmail" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>unsubscribe<wbr/>Email</span><a href="#unsubscribeEmail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">unsubscribe<wbr/>Email</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Whether to unsubscribe the marketing email.</li>
-<li>Set by updateUser or unsubscribeEmail of boot option.</li>
+<div class="tsd-comment tsd-typography"><p>Whether the user has opted out of receiving marketing emails.</p>
+<ul>
+<li>Configurable via the <code>updateUser</code> method or the <code>unsubscribeEmail</code> boot option.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-user-object#unsubscribeemail">https://developers.channel.io/docs/web-user-object#unsubscribeemail</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L73">index.ts:73</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L83">index.ts:83</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="unsubscribeTexting" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>unsubscribe<wbr/>Texting</span><a href="#unsubscribeTexting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">unsubscribe<wbr/>Texting</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Whether to unsubscribe the marketing email.</li>
-<li>Set by updateUser or unsubscribeTexting of boot option.</li>
+<div class="tsd-comment tsd-typography"><p>Whether the user has opted out of receiving marketing text messages.</p>
+<ul>
+<li>Configurable via the <code>updateUser</code> method or the <code>unsubscribeTexting</code> boot option.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-user-object#unsubscribetexting">https://developers.channel.io/docs/web-user-object#unsubscribetexting</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L79">index.ts:79</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L90">index.ts:90</a></li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

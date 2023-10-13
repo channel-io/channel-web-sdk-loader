@@ -16,6 +16,8 @@
 <li><a href="UpdateUserInfo.html">UpdateUserInfo</a></li></ul>
 <h1>Interface UpdateUserInfo</h1></div>
 <section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>Information required to update a user.</p>
+</div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-channelio#updateuser">https://developers.channel.io/docs/web-channelio#updateuser</a></p>
 </div></section>
@@ -24,7 +26,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">UpdateUserInfo</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L499">index.ts:499</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L549">index.ts:549</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -44,70 +46,76 @@
 <section class="tsd-panel tsd-member"><a id="language" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>language</span><a href="#language" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">language</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>If language is ‘ko’ or ‘ja’, UI text inside ChannelTalk changes with that language.</li>
-<li>Otherwise, UI text is set with English.</li>
+<div class="tsd-comment tsd-typography"><p>Specifies the user&#39;s language.</p>
+<ul>
+<li>Supports message translation in <code>32 languages</code> and UI language in <code>ko</code>, <code>ja</code>, and <code>en</code>.</li>
+<li>UI text adapts to <code>ko</code> or <code>ja</code>; defaults to <code>en</code> otherwise.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L504">index.ts:504</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L555">index.ts:555</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="profile" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>profile</span><a href="#profile" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">profile</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="Profile.html" class="tsd-signature-type tsd-kind-interface">Profile</a></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>If you pass null, the whole profile is initialized.</li>
-<li>If you pass null to the specific field inside profile object, that specific field is initialized.</li>
-<li>An empty object is not allowed.</li>
-<li>The name of the field must follow Camel Case.</li>
-<li>If you pass mobileNumber, it must follow e.164 format.</li>
+<div class="tsd-comment tsd-typography"><p>Specifies the user&#39;s profile.</p>
+<ul>
+<li>Passing <code>null</code> will initialize the whole profile.</li>
+<li>For specific fields inside the profile object, passing <code>null</code> will initialize that field.</li>
+<li>Field names must be in camelCase.</li>
+<li>The <code>mobileNumber</code> field must follow the <code>E.164</code> format.</li>
+<li>Empty objects are not allowed.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L512">index.ts:512</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L564">index.ts:564</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="profileOnce" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>profile<wbr/>Once</span><a href="#profileOnce" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">profile<wbr/>Once</span><span class="tsd-signature-symbol">?:</span> <a href="Profile.html" class="tsd-signature-type tsd-kind-interface">Profile</a></div>
-<div class="tsd-comment tsd-typography"><p>Among the fields inside profileOnce object, only the fields with no existing value are added.</p>
+<div class="tsd-comment tsd-typography"><p>Specifies the user&#39;s profile.</p>
+<ul>
+<li>Only fields with no existing values in the profile will be added from the <code>profileOnce</code> object.</li>
+</ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L514">index.ts:514</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L569">index.ts:569</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="tags" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>tags</span><a href="#tags" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">tags</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Max 10 tags are allowed.</li>
-<li>If you pass null, tags are initialized.</li>
-<li>An empty array([]) is not allowed.</li>
+<div class="tsd-comment tsd-typography"><p>Specifies the User&#39;s tags.</p>
+<ul>
+<li>Up to 10 tags are allowed.</li>
+<li>Passing <code>null</code> will initialize the tags.</li>
+<li>Empty arrays are not allowed.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L520">index.ts:520</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L576">index.ts:576</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="unsubscribeEmail" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>unsubscribe<wbr/>Email</span><a href="#unsubscribeEmail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">unsubscribe<wbr/>Email</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set whether the user subscribes to the marketing email.</li>
-<li>Terminates subscription if the value is true.</li>
+<div class="tsd-comment tsd-typography"><p>Determines whether to opt out of receiving marketing emails.</p>
+<ul>
+<li>Setting this to <code>true</code> will terminate the subscription.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L525">index.ts:525</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L581">index.ts:581</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="unsubscribeTexting" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>unsubscribe<wbr/>Texting</span><a href="#unsubscribeTexting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">unsubscribe<wbr/>Texting</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set whether the user subscribes to the marketing SMS.</li>
-<li>Terminates subscription if the value is true.</li>
+<div class="tsd-comment tsd-typography"><p>Determines whether to opt out of receiving marketing text messages.</p>
+<ul>
+<li>Setting this to <code>true</code> will terminate the subscription.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L530">index.ts:530</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L586">index.ts:586</a></li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

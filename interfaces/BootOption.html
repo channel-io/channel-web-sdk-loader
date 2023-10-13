@@ -16,6 +16,8 @@
 <li><a href="BootOption.html">BootOption</a></li></ul>
 <h1>Interface BootOption</h1></div>
 <section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>Boot options for initializing the SDK.</p>
+</div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-boot-option">https://developers.channel.io/docs/web-boot-option</a></p>
 </div></section>
@@ -24,7 +26,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">BootOption</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L156">index.ts:156</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L172">index.ts:172</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -53,175 +55,204 @@
 <section class="tsd-panel tsd-member"><a id="appearance" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>appearance</span><a href="#appearance" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">appearance</span><span class="tsd-signature-symbol">?:</span> <a href="../types/Appearance.html" class="tsd-signature-type tsd-kind-type-alias">Appearance</a></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set the initial appearance of the theme.</li>
-<li>The default value is null.</li>
+<div class="tsd-comment tsd-typography"><p>Configure the initial appearance of your theme.</p>
+<ul>
+<li>The default value is <code>null</code>.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L161">index.ts:161</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L177">index.ts:177</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="customLauncherSelector" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>custom<wbr/>Launcher<wbr/>Selector</span><a href="#customLauncherSelector" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">custom<wbr/>Launcher<wbr/>Selector</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>string	The CSS Selector to select custom launcher.</li>
-<li>Use when you customize default chat button.</li>
+<div class="tsd-comment tsd-typography"><p>Specifies a CSS selector to target the custom launcher.</p>
+<ul>
+<li>Useful for customizing the default <code>channel button</code>.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
-<h4>See</h4><p><a href="https://developers.channel.io/docs/web-boot-option#customlauncherselector">https://developers.channel.io/docs/web-boot-option#customlauncherselector</a></p>
+<h4>See</h4><ul>
+<li><a href="https://developers.channel.io/docs/web-boot-option#customlauncherselector">BootOption: customlauncherselector</a></li>
+<li><a href="https://developers.channel.io/docs/web-customization">Customization</a></li>
+</ul>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L167">index.ts:167</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L185">index.ts:185</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="hideChannelButtonOnBoot" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>hide<wbr/>Channel<wbr/>Button<wbr/>On<wbr/>Boot</span><a href="#hideChannelButtonOnBoot" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">hide<wbr/>Channel<wbr/>Button<wbr/>On<wbr/>Boot</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set whether to hide the default chat button.</li>
-<li>The default value is false.</li>
-</ul>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<div class="tsd-comment tsd-typography"><p>Determines whether to hide the default <code>channel button</code>.</p>
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L172">index.ts:172</a></li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="hidePopup" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>hide<wbr/>Popup</span><a href="#hidePopup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">hide<wbr/>Popup</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set whether to hide the marketing pop-ups and the message alarm pop-ups.</li>
-<li>The default value is false.</li>
-</ul>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L177">index.ts:177</a></li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="language" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>language</span><a href="#language" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">language</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">&quot;en&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;ko&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;ja&quot;</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set the default value of the language.</li>
-<li>Texts differ based on the language.</li>
-<li>When a user is created newly, the user’s language is set as the language.</li>
-<li>language doesn’t change the user’s language already created.</li>
+<li>The default value is <code>false</code>.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
-<h4>See</h4><p><a href="https://developers.channel.io/docs/web-boot-option#language">https://developers.channel.io/docs/web-boot-option#language</a></p>
+<h4>See</h4><ul>
+<li><a href="https://developers.channel.io/docs/web-boot-option#hidechannelbuttononboot">BootOption: hidechannelbuttononboot</a></li>
+<li><a href="https://developers.channel.io/docs/web-customization">Customization</a></li>
+</ul>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L185">index.ts:185</a></li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="memberHash" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>member<wbr/>Hash</span><a href="#memberHash" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">member<wbr/>Hash</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>Set the hashed value of the memberId using HMAC-SHA256.</p>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L193">index.ts:193</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member"><a id="hidePopup" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>hide<wbr/>Popup</span><a href="#hidePopup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">hide<wbr/>Popup</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>Determines whether to hide marketing pop-ups and message alert pop-ups.</p>
+<ul>
+<li>The default value is <code>false</code>.</li>
+</ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L187">index.ts:187</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L199">index.ts:199</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member"><a id="language" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>language</span><a href="#language" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">language</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Specifies the default language setting.</p>
+<ul>
+<li>Applies to new users; does not modify existing users&#39; language settings.</li>
+<li>Supports message translation in <code>32 languages</code> and UI language in <code>ko</code>, <code>ja</code>, and <code>en</code>.</li>
+<li>UI text adapts to <code>ko</code> or <code>ja</code>; defaults to <code>en</code> otherwise.</li>
+</ul>
+</div>
+<div class="tsd-comment tsd-typography">
+<h4>See</h4><ul>
+<li><a href="https://developers.channel.io/docs/web-boot-option#language">Boot Option: language</a></li>
+<li><a href="https://developers.channel.io/docs/web-user-object#language">List of 32 languages</a></li>
+</ul>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L209">index.ts:209</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member"><a id="memberHash" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>member<wbr/>Hash</span><a href="#memberHash" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">member<wbr/>Hash</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Pass the <code>HMAC-SHA256</code> hash of the user <code>memberid</code> using the issued secret key.</p>
+<ul>
+<li>No need to pass <code>memberHash</code> unless using <code>user data encryption</code>.</li>
+</ul>
+</div>
+<div class="tsd-comment tsd-typography">
+<h4>See</h4><ul>
+<li><a href="https://developers.channel.io/docs/web-boot-option#memberhash">BootOption: memberHash</a></li>
+<li><a href="https://developers.channel.io/docs/member-hash">Member Hash Reference</a></li>
+<li><a href="https://channel.io/en/guides/channel-settings/security#user-data-encryption">user-data-encryption</a></li>
+</ul>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L218">index.ts:218</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="memberId" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>member<wbr/>Id</span><a href="#memberId" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">member<wbr/>Id</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>The id of member user.</p>
+<div class="tsd-comment tsd-typography"><p>Specifies the member user&#39;s ID.</p>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-boot-option#memberid">https://developers.channel.io/docs/web-boot-option#memberid</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L192">index.ts:192</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L224">index.ts:224</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="pluginKey" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>plugin<wbr/>Key</span><a href="#pluginKey" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">plugin<wbr/>Key</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>The plugin key of your channel.</p>
+<div class="tsd-comment tsd-typography"><p>Specifies the plugin key for your channel.</p>
 </div>
 <div class="tsd-comment tsd-typography">
-<h4>See</h4><p><a href="https://developers.channel.io/docs/web-boot-option#pluginkey">https://developers.channel.io/docs/web-boot-option#pluginkey</a></p>
+<h4>See</h4><ul>
+<li><a href="https://developers.channel.io/docs/web-boot-option#pluginkey">BootOption: pluginKey</a></li>
+<li><a href="https://developers.channel.io/docs/sdk#get-a-plugin-key">Obtaining a Plugin Key</a></li>
+</ul>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L197">index.ts:197</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L231">index.ts:231</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="profile" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>profile</span><a href="#profile" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">profile</span><span class="tsd-signature-symbol">?:</span> <a href="Profile.html" class="tsd-signature-type tsd-kind-interface">Profile</a></div>
-<div class="tsd-comment tsd-typography"><p>Set the user’s profile.</p>
+<div class="tsd-comment tsd-typography"><p>Specifies the user’s profile.</p>
 </div>
 <div class="tsd-comment tsd-typography">
-<h4>See</h4><p><a href="https://developers.channel.io/docs/web-boot-option#profile">https://developers.channel.io/docs/web-boot-option#profile</a></p>
+<h4>See</h4><ul>
+<li><a href="https://developers.channel.io/docs/web-boot-option#profile">Boot Option: profile</a></li>
+<li><a href="https://developers.channel.io/docs/web-user-object#profile">User Object: profile</a></li>
+</ul>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L202">index.ts:202</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L238">index.ts:238</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="trackDefaultEvent" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>track<wbr/>Default<wbr/>Event</span><a href="#trackDefaultEvent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">track<wbr/>Default<wbr/>Event</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set whether to track the default event(PageView) or not.</li>
-<li>The default value is true.</li>
+<div class="tsd-comment tsd-typography"><p>Determines whether to track the default <code>PageView</code> event.</p>
+<ul>
+<li>The default value is <code>true</code>.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
-<h4>See</h4><p><a href="https://developers.channel.io/docs/web-boot-option#trackdefaultevent">https://developers.channel.io/docs/web-boot-option#trackdefaultevent</a></p>
+<h4>See</h4><ul>
+<li><a href="https://developers.channel.io/docs/web-boot-option#trackdefaultevent">Boot Option: trackdefaultevent</a></li>
+<li><a href="https://developers.channel.io/docs/event">Event Glossary</a></li>
+</ul>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L208">index.ts:208</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L246">index.ts:246</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="trackUtmSource" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>track<wbr/>Utm<wbr/>Source</span><a href="#trackUtmSource" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">track<wbr/>Utm<wbr/>Source</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set whether to track the UTM source and referrer or not.</li>
-<li>The default value is true.</li>
+<div class="tsd-comment tsd-typography"><p>Determines whether to track the <code>UTM source</code> and <code>referrer</code>.</p>
+<ul>
+<li>The default value is <code>true</code>.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-boot-option#trackutmsource">https://developers.channel.io/docs/web-boot-option#trackutmsource</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L214">index.ts:214</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L253">index.ts:253</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="unsubscribe" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>unsubscribe</span><a href="#unsubscribe" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">unsubscribe</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set whether to unsubscribe marketing email and SMS for the user.</li>
-<li>The default value is false.</li>
+<div class="tsd-comment tsd-typography"><p>Determines whether to opt out of receiving marketing emails and text messages.</p>
+<ul>
+<li>The default value is <code>false</code>.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L219">index.ts:219</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L259">index.ts:259</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="unsubscribeEmail" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>unsubscribe<wbr/>Email</span><a href="#unsubscribeEmail" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">unsubscribe<wbr/>Email</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set whether to unsubscribe marketing email for the user.</li>
-<li>The default value is false.</li>
+<div class="tsd-comment tsd-typography"><p>Determines whether to opt out of receiving marketing emails.</p>
+<ul>
+<li>The default value is <code>false</code>.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L224">index.ts:224</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L265">index.ts:265</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="unsubscribeTexting" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>unsubscribe<wbr/>Texting</span><a href="#unsubscribeTexting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">unsubscribe<wbr/>Texting</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set whether to unsubscribe marketing SMS for the user.</li>
-<li>The default value is false.</li>
+<div class="tsd-comment tsd-typography"><p>Determines whether to opt out of receiving marketing text messages.</p>
+<ul>
+<li>The default value is <code>false</code>.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L229">index.ts:229</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L271">index.ts:271</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="zIndex" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>z<wbr/>Index</span><a href="#zIndex" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">z<wbr/>Index</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
-<div class="tsd-comment tsd-typography"><ul>
-<li>Set the z-index of the elements made by the SDK.</li>
-<li>Applied at chat button, messenger, and marketing pop-up.</li>
-<li>The default value is 10000000.</li>
+<div class="tsd-comment tsd-typography"><p>Sets the <code>z-index</code> for elements generated by the SDK.</p>
+<ul>
+<li>Applies to the <code>channel button</code>, <code>messenger</code>, and marketing pop-ups.</li>
+<li>The default value is <code>10,000,000</code>.</li>
 </ul>
 </div>
 <div class="tsd-comment tsd-typography">
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-boot-option#zindex">https://developers.channel.io/docs/web-boot-option#zindex</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/07f59c4/src/index.ts#L236">index.ts:236</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L279">index.ts:279</a></li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
