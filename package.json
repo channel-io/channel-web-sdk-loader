@@ -29,7 +29,9 @@
     "channel web sdk loader",
     "channel js sdk",
     "channel javascript sdk",
-    "channel javascript sdk loader"
+    "channel javascript sdk loader",
+    "채널톡",
+    "채널"
   ],
   "publishConfig": {
     "access": "public"
