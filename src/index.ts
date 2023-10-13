@@ -13,13 +13,13 @@ interface IChannelIO {
 
 /**
  * Represents user information.
- * @see [User Documentation](https://developers.channel.io/docs/web-user-object)
+ * @see https://developers.channel.io/docs/web-user-object
  */
 export interface User {
   /**
    * - Indicates the number of important notifications that are unread.
    * - A numerical indicator is displayed on the channel button to signify this count.
-   * @see [Alert Documentation](https://developers.channel.io/docs/web-user-object#alert)
+   * @see https://developers.channel.io/docs/web-user-object#alert
    */
   alert: number;
 
@@ -35,28 +35,28 @@ export interface User {
    * - Configurable via the `updateUser` method or the language `boot` option.
    * - Supports the following 32 languages:
    *   - 'de'(German), 'hi'(Hindi), 'no'(Norwegian), 'ru'(Russian), 'fi'(Finnish), 'pt'(Portuguese), 'hr'(Croatian), 'fr'(French), 'hu'(Hungarian), 'uk'(Ukrainian), 'sk'(Slovak), 'ca'(Catalan), 'sv'(Swedish), 'ko'(Korean), 'id'(Indonesian), 'ms'(Malay), 'el'(Greek), 'en'(English), 'it'(Italian), 'es'(Spanish), 'he'(Hebrew), 'zh'(Chinese), 'cs'(Czech), 'ar'(Arabic), 'vi'(Vietnamese),'th'(Thai), 'ja'(Japanese), 'pl'(Polish), 'ro'(Romanian), 'da'(Danish), 'nl'(Dutch), 'tr'(Turkish)
-   * @see [Language Documentation](https://developers.channel.io/docs/web-user-object#language)
+   * @see https://developers.channel.io/docs/web-user-object#language
    */
   language: string;
 
   /**
    * - Unique identifier for member user.
    * - If `memberId` is specified in the boot option, the user is considered a member.
-   * @see [Member ID Documentation](https://developers.channel.io/docs/web-user-object#memberid)
+   * @see https://developers.channel.io/docs/web-user-object#memberid
    */
   memberId: string;
 
   /**
    * - The user's name.
    * - Configurable via the `updateUser` method.
-   * @see [Name Documentation](https://developers.channel.io/docs/web-user-object#name)
+   * @see https://developers.channel.io/docs/web-user-object#name
    */
   name?: string;
 
   /**
    * - The user's profile information.
    * - Configurable via the `updateUser` method or the profile boot option.
-   * @see [Profile Documentation](https://developers.channel.io/docs/web-user-object#profile)
+   * @see https://developers.channel.io/docs/web-user-object#profile
    */
   profile?: Profile | null;
 
@@ -64,28 +64,28 @@ export interface User {
    * - An array of tags associated with the user.
    * - All tags are in lowercase.
    * - Configurable via the `updateUser`, `addTags`, or `removeTags` methods.
-   * @see [Tags Documentation](https://developers.channel.io/docs/web-user-object#tags)
+   * @see https://developers.channel.io/docs/web-user-object#tags
    */
   tags?: string[] | null;
 
   /**
    * - Represents the total count of unread notifications for the user.
    * - If you have 'unread' notifications but no 'alert', a red dot is displayed on the channel button to signify unread messages.
-   * @see [Unread Documentation](https://developers.channel.io/docs/web-user-object#unread)
+   * @see https://developers.channel.io/docs/web-user-object#unread
    */
   unread: number;
 
   /**
    * - Determines whether the user has opted out of receiving marketing emails.
    * - Configurable via the `updateUser` method or the `unsubscribeEmail` boot option.
-   * @see [Unsubscribe Email Documentation](https://developers.channel.io/docs/web-user-object#unsubscribeemail)
+   * @see https://developers.channel.io/docs/web-user-object#unsubscribeemail
    */
   unsubscribeEmail: boolean;
 
   /**
    * - Determines whether the user has opted out of receiving marketing text messages.
    * - Configurable via the `updateUser` method or the `unsubscribeTexting` boot option.
-   * @see [Unsubscribe Texting Documentation](https://developers.channel.io/docs/web-user-object#unsubscribetexting)
+   * @see https://developers.channel.io/docs/web-user-object#unsubscribetexting
    */
   unsubscribeTexting: boolean;
 }
@@ -167,7 +167,7 @@ export function loadScript() {
 
 /**
  * Boot options for initializing the SDK.
- * @see [Boot Option Documentation](https://developers.channel.io/docs/web-boot-option)
+ * @see https://developers.channel.io/docs/web-boot-option
  */
 export interface BootOption {
   /**
@@ -179,7 +179,7 @@ export interface BootOption {
   /**
    * - Specifies a CSS selector to target the custom launcher.
    * - Useful for customizing the default channel button.
-   * @see [Custom Launcher Selector Documentation](https://developers.channel.io/docs/web-boot-option#customlauncherselector)
+   * @see https://developers.channel.io/docs/web-boot-option#customlauncherselector
    */
   customLauncherSelector?: string;
 
@@ -200,44 +200,46 @@ export interface BootOption {
    * - Text content varies based on the selected language.
    * - For new users, this will set the default language.
    * - Does not affect the language settings of existing users.
-   * @see [Language](https://developers.channel.io/docs/web-boot-option#language)
+   * @see https://developers.channel.io/docs/web-boot-option#language
    */
   language?: 'en' | 'ko' | 'ja';
 
   /**
-   * Specifies the hashed value of the `memberId` using HMAC-SHA256.
+   * Specifies a hash value for `memberId` using `HMAC-SHA256`.
+   * @see [BootOptions > memberHash](https://developers.channel.io/docs/web-boot-option#memberhash)
+   * @see [Member Hash Reference](https://developers.channel.io/docs/member-hash)
    */
   memberHash?: string;
 
   /**
-   * The identifier for a member user.
-   * @see [Member ID](https://developers.channel.io/docs/web-boot-option#memberid)
+   * The identifier of the member user.
+   * @see https://developers.channel.io/docs/web-boot-option#memberid
    */
   memberId?: string;
 
   /**
    * The plugin key associated with your channel.
-   * @see [Plugin Key](https://developers.channel.io/docs/web-boot-option#pluginkey)
+   * @see https://developers.channel.io/docs/web-boot-option#pluginkey
    */
   pluginKey: string;
 
   /**
    * Specifies the user’s profile.
-   * @see [Profile](https://developers.channel.io/docs/web-boot-option#profile)
+   * @see https://developers.channel.io/docs/web-boot-option#profile
    */
   profile?: Profile;
 
   /**
-   * - Determines whether to track the default PageView event.
+   * - Determines whether to track the default `PageView` event.
    * - The default value is `true`.
-   * @see [Track Default Event](https://developers.channel.io/docs/web-boot-option#trackdefaultevent)
+   * @see https://developers.channel.io/docs/web-boot-option#trackdefaultevent
    */
   trackDefaultEvent?: boolean;
 
   /**
-   * - Determines whether to track the UTM source and referrer.
+   * - Determines whether to track the `UTM source` and `referrer`.
    * - The default value is `true`.
-   * @see [Track UTM Source](https://developers.channel.io/docs/web-boot-option#trackutmsource)
+   * @see https://developers.channel.io/docs/web-boot-option#trackutmsource
    */
   trackUtmSource?: boolean;
 
@@ -260,10 +262,10 @@ export interface BootOption {
   unsubscribeTexting?: boolean;
 
   /**
-   * - Sets the z-index for elements generated by the SDK.
-   * - Applies to the channel button, messenger, and marketing pop-ups.
+   * - Sets the `z-index` for elements generated by the SDK.
+   * - Applies to the `channel button`, `messenger`, and marketing pop-ups.
    * - The default value is `10,000,000`.
-   * @see [z-index](https://developers.channel.io/docs/web-boot-option#zindex)
+   * @see https://developers.channel.io/docs/web-boot-option#zindex
    */
   zIndex?: number;
 }
@@ -274,8 +276,8 @@ export interface BootOption {
  * @param {BootOption} option - Configuration options for initializing the SDK.
  * @param {Callback | undefined} callback - Function to be called after booting is complete. On failure, it receives an error object as its first argument and null as the second. On success, it receives null as the first argument and a user object as the second.
  * @see [Boot Glossary](https://developers.channel.io/docs/glossary#boot)
- * @see [Web Boot Option](https://developers.channel.io/docs/web-boot-option)
- * @see [Web User Object](https://developers.channel.io/docs/web-user-object)
+ * @see [Boot Options](https://developers.channel.io/docs/web-boot-option)
+ * @see [User Object](https://developers.channel.io/docs/web-user-object)
  */
 export function boot(option: BootOption, callback?: Callback) {
   if(isSSR) {
@@ -307,7 +309,7 @@ export function shutdown() {
 /**
  * Displays the messenger interface.
  *
- * @see [ChannelIO showmessenger API](https://developers.channel.io/docs/web-channelio#showmessenger)
+ * @see [ChannelIO > showmessenger API](https://developers.channel.io/docs/web-channelio#showmessenger)
  * @see [Messenger Glossary](https://developers.channel.io/docs/glossary#messenger)
  */
 export function showMessenger() {
@@ -325,7 +327,7 @@ export function showMessenger() {
 /**
  * Hides the messenger interface.
  *
- * @see [ChannelIO hidemessenger API](https://developers.channel.io/docs/web-channelio#hidemessenger)
+ * @see [ChannelIO > hidemessenger API](https://developers.channel.io/docs/web-channelio#hidemessenger)
  * @see [Messenger Glossary](https://developers.channel.io/docs/glossary#messenger)
  */
 export function hideMessenger() {
@@ -350,7 +352,7 @@ export function hideMessenger() {
  *
  * @param {string | number | undefined} chatId - The ID of the chat to open.
  * @param {string | undefined} message - Message to appear in the chat input.
- * @see [ChannelIO openChat API](https://developers.channel.io/docs/web-channelio#openchat)
+ * @see https://developers.channel.io/docs/web-channelio#openchat
  */
 export function openChat(chatId?: string | number, message?: string) {
   if(isSSR) {
@@ -375,7 +377,7 @@ export interface EventProperty {
  *
  * @param {string} eventName - Name of the event. Max length is 30 characters.
  * @param {EventProperty | undefined} eventProperty - Additional properties for the event.
- * @see [ChannelIO track API](https://developers.channel.io/docs/web-channelio#track)
+ * @see [ChannelIO > track API](https://developers.channel.io/docs/web-channelio#track)
  * @see [Event Glossary](https://developers.channel.io/docs/event)
  */
 export function track(eventName: string, eventProperty?: EventProperty) {
@@ -426,16 +428,15 @@ export function onHideMessenger(callback: () => void) {
  * Callback function type for handling badge changes.
  * @param {number} unread - The total number of unread notifications. If you have `unread` notifications but no `alert`, a red dot is displayed on the channel button to signify unread messages.
  * @param {number} alert - The number of important unread notifications. This count is displayed as a number on the channel button.
- * @see [ChannelIO onbadgechanged API](https://developers.channel.io/docs/web-channelio#onbadgechanged)
- * @see [customization](https://developers.channel.io/docs/web-customization)
+ * @see [ChannelIO > onbadgechanged API](https://developers.channel.io/docs/web-channelio#onbadgechanged)
+ * @see [Customization](https://developers.channel.io/docs/web-customization)
  */
 export type BadgeChangedCallback = (unread: number, alert: number) => void;
 /**
  * Register a callback invoked when the count of messages that the user has not yet read.
  * @param {BadgeChangedCallback} callback
- * @see [ChannelIO onbadgechanged API](https://developers.channel.io/docs/web-channelio#onbadgechanged)
- * @see [Channel Button Glossary](https://developers.channel.io/docs/glossary#channel-button)
- * @see [customization](https://developers.channel.io/docs/web-customization)
+ * @see [ChannelIO > onbadgechanged API](https://developers.channel.io/docs/web-channelio#onbadgechanged)
+ * @see [Customization](https://developers.channel.io/docs/web-customization)
  */
 export function onBadgeChanged(callback: BadgeChangedCallback) {
   if(isSSR) {
@@ -466,7 +467,7 @@ export function onChatCreated(callback: () => void) {
 }
 
 /**
- * Represents user profile information for the `onFollowUpChanged` callback.
+ * Represents the user profile information passed in the `onFollowUpChanged` callback argument.
  */
 export interface FollowUpProfile {
   /** User's name. */
@@ -479,8 +480,8 @@ export interface FollowUpProfile {
 export type FollowUpChangedCallback = (followUpProfile: FollowUpProfile) => void;
 /**
  * Registers a callback function that is invoked when the user updates their profile.
- * @param {FollowUpChangedCallback} callback - The callback function, receiving the FollowUpProfile object as an argument.
- * @see [ChannelIO onfollowupchanged API](https://developers.channel.io/docs/web-channelio#onfollowupchanged)
+ * @param {FollowUpChangedCallback} callback - The callback function, receiving the `FollowUpProfile` object as an argument.
+ * @see https://developers.channel.io/docs/web-channelio#onfollowupchanged
  */
 export function onFollowUpChanged(callback: FollowUpChangedCallback) {
   if(isSSR) {
@@ -502,7 +503,7 @@ export type UrlClickedCallback = (url: string) => void;
  *   - Link buttons or text in marketing pop-ups
  *   - Link buttons or text sent by a manager in chat
  * @param {UrlClickedCallback} callback - The callback function, receiving the clicked URL as an argument.
- * @see [ChannelIO onurlclicked API](https://developers.channel.io/docs/web-channelio#onurlclicked)
+ * @see https://developers.channel.io/docs/web-channelio#onurlclicked
  */
 export function onUrlClicked(callback: UrlClickedCallback) {
   if(isSSR) {
@@ -517,14 +518,8 @@ export function onUrlClicked(callback: UrlClickedCallback) {
 }
 
 /**
- * Clears all registered callbacks for the following APIs:
- *   - onShowMessenger
- *   - onHideMessenger
- *   - onBadgeChanged
- *   - onChatCreated
- *   - onFollowUpChanged
- *   - onUrlClicked
- * @see [ChannelIO clearcallbacks API](https://developers.channel.io/docs/web-channelio#clearcallbacks)
+ * Clears all registered callbacks
+ * @see https://developers.channel.io/docs/web-channelio#clearcallbacks
  */
 export function clearCallbacks() {
   if(isSSR) {
@@ -540,7 +535,7 @@ export function clearCallbacks() {
 
 /**
  * Information required to update a user.
- * @see [ChannelIO updateUser API](https://developers.channel.io/docs/web-channelio#updateuser)
+ * @see https://developers.channel.io/docs/web-channelio#updateuser
  */
 export interface UpdateUserInfo {
   /**
@@ -586,7 +581,7 @@ export interface UpdateUserInfo {
  * 
  * @param {UpdateUserInfo} userInfo - Object containing user information to be updated.
  * @param {Callback} [callback] - Optional callback function to be executed upon completion.
- * @see [ChannelIO updateUser API](https://developers.channel.io/docs/web-channelio#updateuser)
+ * @see https://developers.channel.io/docs/web-channelio#updateuser
  */
 export function updateUser(userInfo: UpdateUserInfo, callback?: Callback) {
   if(isSSR) {
@@ -604,7 +599,7 @@ export function updateUser(userInfo: UpdateUserInfo, callback?: Callback) {
  * Adds tags to a user.
  * @param {string[]} tags - Unique tags only. Max 10, always in lowercase.
  * @param {Callback} callback - Called on success or failure.
- * @see [ChannelIO addtags API](https://developers.channel.io/docs/web-channelio#addtags)
+ * @see https://developers.channel.io/docs/web-channelio#addtags
  */
 export function addTags(tags: string[], callback?: Callback) {
   if(isSSR) {
@@ -622,7 +617,7 @@ export function addTags(tags: string[], callback?: Callback) {
  * Removes tags from a user.
  * @param {string[]} tags - Ignores non-existent tags. Empty array or null not allowed.
  * @param {Callback} callback - Called on success or failure.
- * @see [ChannelIO removetags API](https://developers.channel.io/docs/web-channelio#removetags)
+ * @see https://developers.channel.io/docs/web-channelio#removetags
  */
 export function removeTags(tags: string[], callback?: Callback) {
   if(isSSR) {
@@ -640,7 +635,7 @@ export function removeTags(tags: string[], callback?: Callback) {
  * Sets the current page.
  * - Page can be used instead of canonical URL.
  * @param {string} page - The page to set. Do not pass null or undefined. Use `resetPage` to clear.
- * @see [ChannelIO setpage API](https://developers.channel.io/docs/web-channelio#setpage)
+ * @see [ChannelIO > setpage API](https://developers.channel.io/docs/web-channelio#setpage)
  * @see [page Glossary](https://developers.channel.io/docs/page)
  * @see [canonical-url Glossary](https://developers.channel.io/docs/canonical-url)
  */
@@ -659,7 +654,9 @@ export function setPage(page: string) {
 /**
  * - Reset the page value.
  * - If you use resetPage, a canonical URL is used as the page value.
- * @see [ChannelIO resetpage API](https://developers.channel.io/docs/web-channelio#resetpage)
+ * @see [ChannelIO > resetpage API](https://developers.channel.io/docs/web-channelio#resetpage)
+ * @see [page Glossary](https://developers.channel.io/docs/page)
+ * @see [canonical-url Glossary](https://developers.channel.io/docs/canonical-url)
  */
 export function resetPage() {
   if(isSSR) {
@@ -676,7 +673,8 @@ export function resetPage() {
 /**
  * Shows the channel button.
  * - No need to call if `hideChannelButtonOnBoot` is false or `hideChannelButton` was not called.
- * @see [ChannelIO showchannelbutton API](https://developers.channel.io/docs/web-channelio#showchannelbutton)
+ * @see [ChannelIO > showChannelButton API](https://developers.channel.io/docs/web-channelio#showchannelbutton)
+ * @see [Channel Button Glossary](https://developers.channel.io/docs/glossary#channel-button)
  */
 export function showChannelButton() {
   if(isSSR) {
@@ -692,7 +690,8 @@ export function showChannelButton() {
 
 /**
  * Hides the channel button.
- * @see [ChannelIO hidechannelbutton API](https://developers.channel.io/docs/web-channelio#hidechannelbutton)
+ * @see [ChannelIO > hidechannelbutton API](https://developers.channel.io/docs/web-channelio#hidechannelbutton)
+ * @see [Channel Button Glossary](https://developers.channel.io/docs/glossary#channel-button)
  */
 export function hideChannelButton() {
   if(isSSR) {
