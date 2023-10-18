@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>resetPage | @channel.io/channel-web-sdk-loader</title><meta name="description" content="Documentation for @channel.io/channel-web-sdk-loader"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>openSupportBot | @channel.io/channel-web-sdk-loader</title><meta name="description" content="Documentation for @channel.io/channel-web-sdk-loader"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -13,27 +13,41 @@
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
 <li><a href="../modules.html">@channel.io/channel-web-sdk-loader</a></li>
-<li><a href="resetPage.html">resetPage</a></li></ul>
-<h1>Function resetPage</h1></div>
+<li><a href="openSupportBot.html">openSupportBot</a></li></ul>
+<h1>Function openSupportBot</h1></div>
 <section class="tsd-panel">
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="resetPage"><span class="tsd-kind-call-signature">reset<wbr/>Page</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#resetPage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="openSupportBot"><span class="tsd-kind-call-signature">open<wbr/>Support<wbr/>Bot</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">supportBotId</span>, <span class="tsd-kind-parameter">message</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#openSupportBot" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><ul>
-<li>Reset the page value.</li>
-<li>If you use resetPage, a canonical URL is used as the page value.</li>
+<div class="tsd-comment tsd-typography"><p>Initiates a chat by triggering a specified support bot.</p>
+<ul>
+<li>Reveals the <code>messenger</code> if hidden.</li>
+<li>Activates the support bot identified by the given <code>supportBotId</code>.</li>
+<li>No action is taken if <code>supportBotId</code> is not specified.</li>
+<li>Shows an error page if a support bot with the specified <code>supportBotId</code> does not exist.</li>
+<li>Populates the chat input with <code>message</code> upon support bot completion if provided.</li>
+<li>Caution: Utilizing this function outside a click event may cause issues in iOS Safari.</li>
 </ul>
 </div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">supportBotId</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Identifier of the targeted support bot.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">message</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Optional message to populate the chat input field post support bot action.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 <div class="tsd-comment tsd-typography">
-<h4>See</h4><ul>
-<li><a href="https://developers.channel.io/docs/web-channelio#resetpage">ChannelIO: resetpage API</a></li>
-<li><a href="https://developers.channel.io/docs/page">page Glossary</a></li>
-<li><a href="https://developers.channel.io/docs/canonical-url">canonical-url Glossary</a></li>
-</ul>
+<h4>See</h4><p><a href="https://developers.channel.io/docs/web-channelio#opensupportbot">https://developers.channel.io/docs/web-channelio#opensupportbot</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/dba7b78/src/index.ts#L697">index.ts:697</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/dba7b78/src/index.ts#L393">index.ts:393</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

@@ -19,12 +19,13 @@
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="openChat"><span class="tsd-kind-call-signature">open<wbr/>Chat</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">chatId</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">message</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#openChat" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Opens a chat within the messenger.</p>
+<div class="tsd-comment tsd-typography"><p>Opens a chat interface</p>
 <ul>
-<li>For an empty chatId, a new chat is opened. Any provided message appears in the chat input. If the support bot is active, it will initiate.</li>
-<li>If a chat with the provided chatId exists, that chat will open, and any message will be ignored.</li>
-<li>If a chat doesn&#39;t exist, the home is opened.</li>
-<li>Note: Using this function outside a click event handler may lead to issues on iOS Safari.</li>
+<li>Reveals the <code>messenger</code> if hidden.</li>
+<li>For an undefined <code>chatId</code>, a new chat is created. Any provided <code>message</code> populates the chat input. The support bot initializes if active.</li>
+<li>If a chat with the given <code>chatId</code> exists, the chat will open, and the <code>message</code> parameter will be disregarded.</li>
+<li>If no matching chat exists, the <code>home</code> view opens.</li>
+<li>Caution: Utilizing this function outside a click event may cause issues in iOS Safari.</li>
 </ul>
 </div>
 <div class="tsd-parameters">
@@ -32,12 +33,12 @@
 <ul class="tsd-parameter-list">
 <li>
 <h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">chatId</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
-<div class="tsd-comment tsd-typography"><p>The ID of the chat to open.</p>
+<div class="tsd-comment tsd-typography"><p>ID of the chat to reveal.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li>
 <li>
 <h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">message</span>: <span class="tsd-signature-type">string</span></h5>
-<div class="tsd-comment tsd-typography"><p>Message to appear in the chat input.</p>
+<div class="tsd-comment tsd-typography"><p>Optional text to populate the chat input field.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -45,7 +46,7 @@
 <h4>See</h4><p><a href="https://developers.channel.io/docs/web-channelio#openchat">https://developers.channel.io/docs/web-channelio#openchat</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/323b555/src/index.ts#L366">index.ts:366</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/channel-io/channel-web-sdk-loader/blob/dba7b78/src/index.ts#L367">index.ts:367</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
