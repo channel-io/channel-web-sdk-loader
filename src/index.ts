@@ -352,15 +352,16 @@ export function hideMessenger() {
 }
 
 /**
- * Opens a chat within the messenger.
+ * Opens a chat interface
  * 
- * - For an empty chatId, a new chat is opened. Any provided message appears in the chat input. If the support bot is active, it will initiate.
- * - If a chat with the provided chatId exists, that chat will open, and any message will be ignored.
- * - If a chat doesn't exist, the home is opened.
- * - Note: Using this function outside a click event handler may lead to issues on iOS Safari.
+ * - Reveals the `messenger` if hidden.
+ * - For an undefined `chatId`, a new chat is created. Any provided `message` populates the chat input. The support bot initializes if active.
+ * - If a chat with the given `chatId` exists, the chat will open, and the `message` parameter will be disregarded.
+ * - If no matching chat exists, the `home` view opens.
+ * - Caution: Utilizing this function outside a click event may cause issues in iOS Safari.
  *
- * @param {string | number | undefined} chatId - The ID of the chat to open.
- * @param {string | undefined} message - Message to appear in the chat input.
+ * @param {string | number | undefined} chatId - ID of the chat to reveal.
+ * @param {string | undefined} message - Optional text to populate the chat input field.
  * @see https://developers.channel.io/docs/web-channelio#openchat
  */
 export function openChat(chatId?: string | number, message?: string) {
@@ -373,6 +374,32 @@ export function openChat(chatId?: string | number, message?: string) {
     return;
   }
   window.ChannelIO('openChat', chatId, message);
+}
+
+/**
+ * Initiates a chat by triggering a specified support bot.
+ * 
+ * - Reveals the `messenger` if hidden.
+ * - Activates the support bot identified by the given `supportBotId`.
+ * - No action is taken if `supportBotId` is not specified.
+ * - Shows an error page if a support bot with the specified `supportBotId` does not exist.
+ * - Populates the chat input with `message` upon support bot completion if provided.
+ * - Caution: Utilizing this function outside a click event may cause issues in iOS Safari.
+ * 
+ * @param {string} supportBotId - Identifier of the targeted support bot.
+ * @param {string | undefined} message - Optional message to populate the chat input field post support bot action.
+ * @see https://developers.channel.io/docs/web-channelio#opensupportbot
+ */
+export function openSupportBot(supportBotId: string, message?: string) {
+  if(isSSR) {
+    console.error('openSupportBot is only executable on browser.');
+    return;
+  }
+  if(!window.ChannelIO) {
+    console.error('ChannelIO is not loaded. Please call loadScript() before openSupportBot().');
+    return;
+  }
+  window.ChannelIO('openSupportBot', supportBotId, message);
 }
 
 export interface EventProperty {
