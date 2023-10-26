@@ -1,8 +1,10 @@
 # channel-web-sdk-loader
 
-![npm](https://img.shields.io/npm/v/%40channel.io%2Fchannel-web-sdk-loader)
-![NPM](https://img.shields.io/npm/l/%40channel.io%2Fchannel-web-sdk-loader)
-![npm](https://img.shields.io/npm/dm/%40channel.io/channel-web-sdk-loader)
+[![npm](https://img.shields.io/npm/v/%40channel.io%2Fchannel-web-sdk-loader)](https://www.npmjs.com/package/@channel.io/channel-web-sdk-loader)
+[![NPM](https://img.shields.io/npm/l/%40channel.io%2Fchannel-web-sdk-loader)](https://github.com/channel-io/channel-web-sdk-loader/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/dm/%40channel.io/channel-web-sdk-loader)](https://www.npmjs.com/package/@channel.io/channel-web-sdk-loader)
+[![minzip](https://img.shields.io/bundlephobia/minzip/@channel.io/channel-web-sdk-loader)](https://bundlephobia.com/result?p=@channel.io/channel-web-sdk-loader)
+
 
 > The Official [Channel SDK](https://developers.channel.io/docs/sdk) Loader for Web
 
