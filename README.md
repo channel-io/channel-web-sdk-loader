@@ -13,8 +13,19 @@
 - [TypeDoc API Reference](https://channel-io.github.io/channel-web-sdk-loader/)
 
 ## Installation
+### NPM
 ```bash
 npm install @channel.io/channel-web-sdk-loader
+```
+
+### Yarn
+```bash
+yarn add @channel.io/channel-web-sdk-loader
+```
+
+### PNPM
+```bash
+pnpm install @channel.io/channel-web-sdk-loader
 ```
 
 ## Usage
