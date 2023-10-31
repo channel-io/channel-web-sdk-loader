@@ -1,6 +1,6 @@
 declare global {
   interface Window {
-    ChannelIO?: IChannelIO;
+    ChannelIO: IChannelIO;
     ChannelIOInitialized?: boolean;
   }
 }
@@ -116,7 +116,21 @@ export interface Profile {
  */
 export type Appearance = 'light' | 'dark' | 'system' | null;
 
-const isSSR = typeof window === 'undefined';
+const isSSR = () => {
+  if(typeof window === 'undefined') {
+    console.error('ChannelIO APIs are only executable on browser.');
+    return true;
+  }
+  return false;
+}
+
+const isSDKLoaded = () => {
+  if(!window.ChannelIO) {
+    console.error('ChannelIO is not loaded. Please call loadScript() before calling ChannelIO APIs.');
+    return false;
+  }
+  return true;
+}
 
 /**
  * Loads the Channel SDK script into the document.
@@ -124,14 +138,13 @@ const isSSR = typeof window === 'undefined';
  * - Idempotent: If the Channel SDK script is already loaded, calling this function has no effect.
  */
 export function loadScript() {
-  if(isSSR) {
-    console.error('loadScript is only executable on browser.');
+  if(isSSR()) {
     return;
   }
 
   (function() {
     var w = window;
-    if (w.ChannelIO) {
+    if (!!w.ChannelIO) {
       return;
     }
     var ch: IChannelIO = function() {
@@ -289,12 +302,7 @@ export interface BootOption {
  * @see [User Object](https://developers.channel.io/docs/web-user-object)
  */
 export function boot(option: BootOption, callback?: Callback) {
-  if(isSSR) {
-    console.error('boot is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before boot().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('boot', option, callback);
@@ -304,12 +312,7 @@ export function boot(option: BootOption, callback?: Callback) {
  * Terminates all SDK operations and reinitializes internal data.
  */
 export function shutdown() {
-  if(isSSR) {
-    console.error('shutdown is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before shutdown().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('shutdown');
@@ -322,12 +325,7 @@ export function shutdown() {
  * @see [Messenger Glossary](https://developers.channel.io/docs/glossary#messenger)
  */
 export function showMessenger() {
-  if(isSSR) {
-    console.error('showMessenger is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before showMessenger().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('showMessenger');
@@ -340,12 +338,7 @@ export function showMessenger() {
  * @see [Messenger Glossary](https://developers.channel.io/docs/glossary#messenger)
  */
 export function hideMessenger() {
-  if(isSSR) {
-    console.error('hideMessenger is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before hideMessenger().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('hideMessenger');
@@ -365,12 +358,7 @@ export function hideMessenger() {
  * @see https://developers.channel.io/docs/web-channelio#openchat
  */
 export function openChat(chatId?: string | number, message?: string) {
-  if(isSSR) {
-    console.error('openChat is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before openChat().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('openChat', chatId, message);
@@ -391,12 +379,7 @@ export function openChat(chatId?: string | number, message?: string) {
  * @see https://developers.channel.io/docs/web-channelio#opensupportbot
  */
 export function openSupportBot(supportBotId: string, message?: string) {
-  if(isSSR) {
-    console.error('openSupportBot is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before openSupportBot().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('openSupportBot', supportBotId, message);
@@ -417,12 +400,7 @@ export interface EventProperty {
  * @see [Event Glossary](https://developers.channel.io/docs/event)
  */
 export function track(eventName: string, eventProperty?: EventProperty) {
-  if(isSSR) {
-    console.error('track is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before track().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('track', eventName, eventProperty);
@@ -433,12 +411,7 @@ export function track(eventName: string, eventProperty?: EventProperty) {
  * @param {Function} callback - The callback function to be executed.
  */
 export function onShowMessenger(callback: () => void) {
-  if(isSSR) {
-    console.error('onShowMessenger is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before onShowMessenger().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('onShowMessenger', callback);
@@ -449,12 +422,7 @@ export function onShowMessenger(callback: () => void) {
  * @param {Function} callback - The callback function to be executed.
  */
 export function onHideMessenger(callback: () => void) {
-  if(isSSR) {
-    console.error('onHideMessenger is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before onHideMessenger().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('onHideMessenger', callback);
@@ -475,12 +443,7 @@ export type BadgeChangedCallback = (unread: number, alert: number) => void;
  * @see [Customization](https://developers.channel.io/docs/web-customization)
  */
 export function onBadgeChanged(callback: BadgeChangedCallback) {
-  if(isSSR) {
-    console.error('onBadgeChanged is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before onBadgeChanged().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('onBadgeChanged', callback);
@@ -491,12 +454,7 @@ export function onBadgeChanged(callback: BadgeChangedCallback) {
  * @param {Function} callback - The callback function to be executed.
  */
 export function onChatCreated(callback: () => void) {
-  if(isSSR) {
-    console.error('onChatCreated is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before onChatCreated().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('onChatCreated', callback);
@@ -520,12 +478,7 @@ export type FollowUpChangedCallback = (followUpProfile: FollowUpProfile) => void
  * @see https://developers.channel.io/docs/web-channelio#onfollowupchanged
  */
 export function onFollowUpChanged(callback: FollowUpChangedCallback) {
-  if(isSSR) {
-    console.error('onFollowUpChanged is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before onFollowUpChanged().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('onFollowUpChanged', callback);
@@ -542,12 +495,7 @@ export type UrlClickedCallback = (url: string) => void;
  * @see https://developers.channel.io/docs/web-channelio#onurlclicked
  */
 export function onUrlClicked(callback: UrlClickedCallback) {
-  if(isSSR) {
-    console.error('onUrlClicked is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before onUrlClicked().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('onUrlClicked', callback);
@@ -558,12 +506,7 @@ export function onUrlClicked(callback: UrlClickedCallback) {
  * @see https://developers.channel.io/docs/web-channelio#clearcallbacks
  */
 export function clearCallbacks() {
-  if(isSSR) {
-    console.error('clearCallbacks is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before clearCallbacks().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('clearCallbacks');
@@ -620,12 +563,7 @@ export interface UpdateUserInfo {
  * @see https://developers.channel.io/docs/web-channelio#updateuser
  */
 export function updateUser(userInfo: UpdateUserInfo, callback?: Callback) {
-  if(isSSR) {
-    console.error('updateUser is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before updateUser().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('updateUser', userInfo, callback);
@@ -638,12 +576,7 @@ export function updateUser(userInfo: UpdateUserInfo, callback?: Callback) {
  * @see https://developers.channel.io/docs/web-channelio#addtags
  */
 export function addTags(tags: string[], callback?: Callback) {
-  if(isSSR) {
-    console.error('addTags is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before addTags().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('addTags', tags, callback);
@@ -656,12 +589,7 @@ export function addTags(tags: string[], callback?: Callback) {
  * @see https://developers.channel.io/docs/web-channelio#removetags
  */
 export function removeTags(tags: string[], callback?: Callback) {
-  if(isSSR) {
-    console.error('removeTags is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before removeTags().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('removeTags', tags, callback);
@@ -676,12 +604,7 @@ export function removeTags(tags: string[], callback?: Callback) {
  * @see [canonical-url Glossary](https://developers.channel.io/docs/canonical-url)
  */
 export function setPage(page: string) {
-  if(isSSR) {
-    console.error('setPage is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before setPage().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('setPage', page);
@@ -695,12 +618,7 @@ export function setPage(page: string) {
  * @see [canonical-url Glossary](https://developers.channel.io/docs/canonical-url)
  */
 export function resetPage() {
-  if(isSSR) {
-    console.error('resetPage is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before resetPage().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('resetPage');
@@ -713,12 +631,7 @@ export function resetPage() {
  * @see [Channel Button Glossary](https://developers.channel.io/docs/glossary#channel-button)
  */
 export function showChannelButton() {
-  if(isSSR) {
-    console.error('showChannelButton is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before showChannelButton().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('showChannelButton');
@@ -730,12 +643,7 @@ export function showChannelButton() {
  * @see [Channel Button Glossary](https://developers.channel.io/docs/glossary#channel-button)
  */
 export function hideChannelButton() {
-  if(isSSR) {
-    console.error('hideChannelButton is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before hideChannelButton().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('hideChannelButton');
@@ -746,12 +654,7 @@ export function hideChannelButton() {
  * @param {Appearance} appearance
  */
 export function setAppearance(appearance: Appearance) {
-  if(isSSR) {
-    console.error('setAppearance is only executable on browser.');
-    return;
-  }
-  if(!window.ChannelIO) {
-    console.error('ChannelIO is not loaded. Please call loadScript() before setAppearance().');
+  if(isSSR() || !isSDKLoaded()) {
     return;
   }
   window.ChannelIO('setAppearance', appearance);
