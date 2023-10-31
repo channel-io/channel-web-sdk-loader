@@ -132,6 +132,13 @@ const isSDKLoaded = () => {
   return true;
 }
 
+const safeChannelIO = (...args: unknown[]) => {
+  if(isSSR() || !isSDKLoaded()) {
+    return;
+  }
+  window.ChannelIO(...args);
+}
+
 /**
  * Loads the Channel SDK script into the document.
  * - Browser-only: This function can only be executed in a browser environment.
@@ -302,20 +309,14 @@ export interface BootOption {
  * @see [User Object](https://developers.channel.io/docs/web-user-object)
  */
 export function boot(option: BootOption, callback?: Callback) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('boot', option, callback);
+  safeChannelIO('boot', option, callback);
 }
 
 /**
  * Terminates all SDK operations and reinitializes internal data.
  */
 export function shutdown() {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('shutdown');
+  safeChannelIO('shutdown');
 }
 
 /**
@@ -325,10 +326,7 @@ export function shutdown() {
  * @see [Messenger Glossary](https://developers.channel.io/docs/glossary#messenger)
  */
 export function showMessenger() {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('showMessenger');
+  safeChannelIO('showMessenger');
 }
 
 /**
@@ -338,10 +336,7 @@ export function showMessenger() {
  * @see [Messenger Glossary](https://developers.channel.io/docs/glossary#messenger)
  */
 export function hideMessenger() {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('hideMessenger');
+  safeChannelIO('hideMessenger');
 }
 
 /**
@@ -358,10 +353,7 @@ export function hideMessenger() {
  * @see https://developers.channel.io/docs/web-channelio#openchat
  */
 export function openChat(chatId?: string | number, message?: string) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('openChat', chatId, message);
+  safeChannelIO('openChat', chatId, message);
 }
 
 /**
@@ -379,10 +371,7 @@ export function openChat(chatId?: string | number, message?: string) {
  * @see https://developers.channel.io/docs/web-channelio#opensupportbot
  */
 export function openSupportBot(supportBotId: string, message?: string) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('openSupportBot', supportBotId, message);
+  safeChannelIO('openSupportBot', supportBotId, message);
 }
 
 export interface EventProperty {
@@ -400,10 +389,7 @@ export interface EventProperty {
  * @see [Event Glossary](https://developers.channel.io/docs/event)
  */
 export function track(eventName: string, eventProperty?: EventProperty) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('track', eventName, eventProperty);
+  safeChannelIO('track', eventName, eventProperty);
 }
 
 /**
@@ -411,10 +397,7 @@ export function track(eventName: string, eventProperty?: EventProperty) {
  * @param {Function} callback - The callback function to be executed.
  */
 export function onShowMessenger(callback: () => void) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('onShowMessenger', callback);
+  safeChannelIO('onShowMessenger', callback);
 }
 
 /**
@@ -422,10 +405,7 @@ export function onShowMessenger(callback: () => void) {
  * @param {Function} callback - The callback function to be executed.
  */
 export function onHideMessenger(callback: () => void) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('onHideMessenger', callback);
+  safeChannelIO('onHideMessenger', callback);
 }
 
 /**
@@ -443,10 +423,7 @@ export type BadgeChangedCallback = (unread: number, alert: number) => void;
  * @see [Customization](https://developers.channel.io/docs/web-customization)
  */
 export function onBadgeChanged(callback: BadgeChangedCallback) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('onBadgeChanged', callback);
+  safeChannelIO('onBadgeChanged', callback);
 }
 
 /**
@@ -454,10 +431,7 @@ export function onBadgeChanged(callback: BadgeChangedCallback) {
  * @param {Function} callback - The callback function to be executed.
  */
 export function onChatCreated(callback: () => void) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('onChatCreated', callback);
+  safeChannelIO('onChatCreated', callback);
 }
 
 /**
@@ -478,10 +452,7 @@ export type FollowUpChangedCallback = (followUpProfile: FollowUpProfile) => void
  * @see https://developers.channel.io/docs/web-channelio#onfollowupchanged
  */
 export function onFollowUpChanged(callback: FollowUpChangedCallback) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('onFollowUpChanged', callback);
+  safeChannelIO('onFollowUpChanged', callback);
 }
 
 
@@ -495,10 +466,7 @@ export type UrlClickedCallback = (url: string) => void;
  * @see https://developers.channel.io/docs/web-channelio#onurlclicked
  */
 export function onUrlClicked(callback: UrlClickedCallback) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('onUrlClicked', callback);
+  safeChannelIO('onUrlClicked', callback);
 }
 
 /**
@@ -506,10 +474,7 @@ export function onUrlClicked(callback: UrlClickedCallback) {
  * @see https://developers.channel.io/docs/web-channelio#clearcallbacks
  */
 export function clearCallbacks() {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('clearCallbacks');
+  safeChannelIO('clearCallbacks');
 }
 
 /**
@@ -563,10 +528,7 @@ export interface UpdateUserInfo {
  * @see https://developers.channel.io/docs/web-channelio#updateuser
  */
 export function updateUser(userInfo: UpdateUserInfo, callback?: Callback) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('updateUser', userInfo, callback);
+  safeChannelIO('updateUser', userInfo, callback);
 }
 
 /**
@@ -576,10 +538,7 @@ export function updateUser(userInfo: UpdateUserInfo, callback?: Callback) {
  * @see https://developers.channel.io/docs/web-channelio#addtags
  */
 export function addTags(tags: string[], callback?: Callback) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('addTags', tags, callback);
+  safeChannelIO('addTags', tags, callback);
 }
 
 /**
@@ -589,10 +548,7 @@ export function addTags(tags: string[], callback?: Callback) {
  * @see https://developers.channel.io/docs/web-channelio#removetags
  */
 export function removeTags(tags: string[], callback?: Callback) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('removeTags', tags, callback);
+  safeChannelIO('removeTags', tags, callback);
 }
 
 /**
@@ -604,10 +560,7 @@ export function removeTags(tags: string[], callback?: Callback) {
  * @see [canonical-url Glossary](https://developers.channel.io/docs/canonical-url)
  */
 export function setPage(page: string) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('setPage', page);
+  safeChannelIO('setPage', page);
 }
 
 /**
@@ -618,10 +571,7 @@ export function setPage(page: string) {
  * @see [canonical-url Glossary](https://developers.channel.io/docs/canonical-url)
  */
 export function resetPage() {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('resetPage');
+  safeChannelIO('resetPage');
 }
 
 /**
@@ -631,10 +581,7 @@ export function resetPage() {
  * @see [Channel Button Glossary](https://developers.channel.io/docs/glossary#channel-button)
  */
 export function showChannelButton() {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('showChannelButton');
+  safeChannelIO('showChannelButton');
 }
 
 /**
@@ -643,10 +590,7 @@ export function showChannelButton() {
  * @see [Channel Button Glossary](https://developers.channel.io/docs/glossary#channel-button)
  */
 export function hideChannelButton() {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('hideChannelButton');
+  safeChannelIO('hideChannelButton');
 }
 
 /**
@@ -654,8 +598,5 @@ export function hideChannelButton() {
  * @param {Appearance} appearance
  */
 export function setAppearance(appearance: Appearance) {
-  if(isSSR() || !isSDKLoaded()) {
-    return;
-  }
-  window.ChannelIO('setAppearance', appearance);
+  safeChannelIO('setAppearance', appearance);
 }
