@@ -16,7 +16,7 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "npm run build:cjs && npm run build:esm",
-    "build:cjs": "tsc -p tsconfig.cjs.json -d && mv dist/index.js dist/index.cjs.js",
+    "build:cjs": "tsc -p tsconfig.cjs.json && mv dist/index.js dist/index.cjs.js",
     "build:esm": "tsc -p tsconfig.esm.json && mv dist/index.js dist/index.esm.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git-cz",
