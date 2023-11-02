@@ -54,9 +54,6 @@
     "채널톡",
     "채널"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "author": "Channel Corp.",
   "license": "Apache-2.0",
   "bugs": {

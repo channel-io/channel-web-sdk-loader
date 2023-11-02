@@ -21,7 +21,7 @@ jobs:
       run: npm ci
 
     - name: Publish to NPM
-      run: npm publish --access public
+      run: npm publish
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
