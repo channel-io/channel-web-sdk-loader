@@ -27,9 +27,7 @@
     "commit": "git-cz",
     "build:typedoc": "typedoc src/index.ts"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/channel-io/channel-web-sdk-loader.git"
