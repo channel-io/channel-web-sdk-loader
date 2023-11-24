@@ -1,9 +1,8 @@
-<br>
-
-![Channel Talk (light mode)](./images/Channel.io_Logo_Color.svg#gh-light-mode-only)
-![Channel Talk (dark mode)](./images/Channel.io_Logo_White.svg#gh-dark-mode-only)
-
-<br>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./images/Channel.io_Logo_White.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./images/Channel.io_Logo_Color.svg">
+  <img alt="Channel Talk" src="./images/Channel.io_Logo_Color.svg">
+</picture>
 
 # channel-web-sdk-loader
 
