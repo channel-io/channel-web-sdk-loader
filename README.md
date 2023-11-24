@@ -1,7 +1,7 @@
 <br>
 
-![Channel Talk (light mode)](./images/Channel.io_Logo_Color.svg)
-![Channel Talk (dark mode)](./images/Channel.io_Logo_White.svg)
+![Channel Talk (light mode)](./images/Channel.io_Logo_Color.svg#gh-light-mode-only)
+![Channel Talk (dark mode)](./images/Channel.io_Logo_White.svg#gh-dark-mode-only)
 
 <br>
 
