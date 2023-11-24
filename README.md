@@ -9,8 +9,9 @@
 > The Official [Channel SDK](https://developers.channel.io/docs/sdk) Loader for Web
 
 ## Quick Links
-- [Official Developer Documentation](https://developers.channel.io/docs/web-channelio)
-- [TypeDoc API Reference](https://channel-io.github.io/channel-web-sdk-loader/)
+- [📄 Official Developer Documentation](https://developers.channel.io/docs/web-channelio)
+- [📄 TypeDoc API Reference](https://channel-io.github.io/channel-web-sdk-loader/)
+- [📦 Playground - React Demo](https://codesandbox.io/p/sandbox/ch-web-sdk-playground-xm8ls8)
 
 ## Installation
 ### NPM
@@ -51,4 +52,7 @@ ChannelService.boot({
 - For additional information, please consult the [the official documentation](https://developers.channel.io/docs/sdk#get-a-plugin-key).
 
 ## API Documentation
-- [TypeDoc API Reference](https://channel-io.github.io/channel-web-sdk-loader/)
+- [📄 TypeDoc API Reference](https://channel-io.github.io/channel-web-sdk-loader/)
+
+## Playground
+- [📦 CodeSandbox - React Demo](https://codesandbox.io/p/sandbox/ch-web-sdk-playground-xm8ls8)
