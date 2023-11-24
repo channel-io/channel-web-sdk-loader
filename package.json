@@ -28,7 +28,8 @@
     "build:typedoc": "typedoc src/index.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "images"
   ],
   "repository": {
     "type": "git",

@@ -1,3 +1,10 @@
+<br>
+
+![Channel Talk (light mode)](./images/Channel.io_Logo_Color.svg)
+![Channel Talk (dark mode)](./images/Channel.io_Logo_White.svg)
+
+<br>
+
 # channel-web-sdk-loader
 
 [![npm](https://img.shields.io/npm/v/%40channel.io%2Fchannel-web-sdk-loader)](https://www.npmjs.com/package/@channel.io/channel-web-sdk-loader)
