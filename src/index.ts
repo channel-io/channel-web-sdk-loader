@@ -103,7 +103,7 @@ export type Callback = (error: Error | null, user: User | null) => void;
  * @see https://developers.channel.io/docs/web-user-object#profile
  */
 export interface Profile {
-  [key: string]: string | number | boolean | null;
+  [key: string]: string | string[] | number | number[] | boolean | null;
 }
 
 /**
