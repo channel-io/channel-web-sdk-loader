@@ -366,6 +366,7 @@ export function openChat(chatId?: string | number, message?: string) {
  * - Caution: Utilizing this function outside a click event may cause issues in iOS Safari.
  *
  * @param {string} workflowId - Identifier of the targeted workflow.
+ * @see https://developers.channel.io/docs/web-channelio#openworkflow
  */
 export function openWorkflow(workflowId: string) {
   safeChannelIO('openWorkflow', workflowId);
