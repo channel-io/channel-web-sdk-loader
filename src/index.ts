@@ -343,7 +343,7 @@ export function hideMessenger() {
  * Opens a chat interface
  *
  * - Reveals the `messenger` if hidden.
- * - For an undefined `chatId`, a new chat is created. Any provided `message` populates the chat input. The support bot initializes if active.
+ * - For an undefined `chatId`, a new chat is created. Any provided `message` populates the chat input. The workflow initializes if active.
  * - If a chat with the given `chatId` exists, the chat will open, and the `message` parameter will be disregarded.
  * - If no matching chat exists, the `home` view opens.
  * - Caution: Utilizing this function outside a click event may cause issues in iOS Safari.
