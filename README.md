@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./images/Channel.io_Logo_White.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./images/Channel.io_Logo_Color.svg">
-  <img alt="Channel Talk" src="./images/Channel.io_Logo_Color.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="./images/ChannelTalk_Logo_White.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./images/ChannelTalk_Logo_Primary.svg">
+  <img alt="Channel Talk" src="./images/ChannelTalk_Logo_Primary.svg">
 </picture>
 
 # channel-web-sdk-loader
