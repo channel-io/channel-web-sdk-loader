@@ -552,7 +552,7 @@ export function removeTags(tags: string[], callback?: Callback) {
 }
 
 /**
- * Sets the current page.
+ * Sets the current page and user chat profile.
  * - Page can be used instead of canonical URL.
  * @param {string} page - The page to set. Do not pass null or undefined. Use `resetPage` to clear.
  * @param {Record<string, any>} profile - The user chat profile value.
@@ -561,11 +561,11 @@ export function removeTags(tags: string[], callback?: Callback) {
  * @see [canonical-url Glossary](https://developers.channel.io/docs/canonical-url)
  */
 export function setPage(page: string, profile?: Record<string, any>) {
-  safeChannelIO('setPage', page, profile)
+  safeChannelIO('setPage', page, profile);
 }
 
 /**
- * - Reset the page value.
+ * - Reset the page and user chat profile value.
  * - If you use resetPage, a canonical URL is used as the page value.
  * @see [ChannelIO: resetpage API](https://developers.channel.io/docs/web-channelio#resetpage)
  * @see [page Glossary](https://developers.channel.io/docs/page)
