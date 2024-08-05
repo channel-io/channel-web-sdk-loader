@@ -357,21 +357,18 @@ export function openChat(chatId?: string | number, message?: string) {
 }
 
 /**
- * Initiates a chat by triggering a specified support bot.
+ * Initiates a chat by triggering a specified workflow.
  *
  * - Reveals the `messenger` if hidden.
- * - Activates the support bot identified by the given `supportBotId`.
- * - No action is taken if `supportBotId` is not specified.
- * - Shows an error page if a support bot with the specified `supportBotId` does not exist.
- * - Populates the chat input with `message` upon support bot completion if provided.
+ * - Activates the workflow identified by the given `workflowId`.
+ * - No action is taken if `workflowId` is not specified.
+ * - Shows an error page if a workflow with the specified `workflowId` does not exist.
  * - Caution: Utilizing this function outside a click event may cause issues in iOS Safari.
  *
- * @param {string} supportBotId - Identifier of the targeted support bot.
- * @param {string | undefined} message - Optional message to populate the chat input field post support bot action.
- * @see https://developers.channel.io/docs/web-channelio#opensupportbot
+ * @param {string} workflowId - Identifier of the targeted workflow.
  */
-export function openSupportBot(supportBotId: string, message?: string) {
-  safeChannelIO('openSupportBot', supportBotId, message);
+export function openWorkflow(workflowId: string) {
+  safeChannelIO('openWorkflow', workflowId);
 }
 
 export interface EventProperty {
