@@ -341,9 +341,9 @@ export function hideMessenger() {
 
 /**
  * Opens a chat interface
- * 
+ *
  * - Reveals the `messenger` if hidden.
- * - For an undefined `chatId`, a new chat is created. Any provided `message` populates the chat input. The support bot initializes if active.
+ * - For an undefined `chatId`, a new chat is created. Any provided `message` populates the chat input. The workflow initializes if active.
  * - If a chat with the given `chatId` exists, the chat will open, and the `message` parameter will be disregarded.
  * - If no matching chat exists, the `home` view opens.
  * - Caution: Utilizing this function outside a click event may cause issues in iOS Safari.
@@ -357,21 +357,19 @@ export function openChat(chatId?: string | number, message?: string) {
 }
 
 /**
- * Initiates a chat by triggering a specified support bot.
- * 
+ * Initiates a chat by triggering a specified workflow.
+ *
  * - Reveals the `messenger` if hidden.
- * - Activates the support bot identified by the given `supportBotId`.
- * - No action is taken if `supportBotId` is not specified.
- * - Shows an error page if a support bot with the specified `supportBotId` does not exist.
- * - Populates the chat input with `message` upon support bot completion if provided.
+ * - Activates the workflow identified by the given `workflowId`.
+ * - No action is taken if `workflowId` is not specified.
+ * - Shows an error page if a workflow with the specified `workflowId` does not exist.
  * - Caution: Utilizing this function outside a click event may cause issues in iOS Safari.
- * 
- * @param {string} supportBotId - Identifier of the targeted support bot.
- * @param {string | undefined} message - Optional message to populate the chat input field post support bot action.
- * @see https://developers.channel.io/docs/web-channelio#opensupportbot
+ *
+ * @param {string} workflowId - Identifier of the targeted workflow.
+ * @see https://developers.channel.io/docs/web-channelio#openworkflow
  */
-export function openSupportBot(supportBotId: string, message?: string) {
-  safeChannelIO('openSupportBot', supportBotId, message);
+export function openWorkflow(workflowId: string) {
+  safeChannelIO('openWorkflow', workflowId);
 }
 
 export interface EventProperty {
@@ -379,7 +377,7 @@ export interface EventProperty {
 }
 /**
  * Tracks user event.
- * 
+ *
  * - If the event is new, it gets created.
  * - Data might take from minutes to hours to appear on the `Desk`.
  *
@@ -522,7 +520,7 @@ export interface UpdateUserInfo {
 }
 /**
  * Updates user information.
- * 
+ *
  * @param {UpdateUserInfo} userInfo - Object containing user information to be updated.
  * @param {Callback} [callback] - Optional callback function to be executed upon completion.
  * @see https://developers.channel.io/docs/web-channelio#updateuser
@@ -552,19 +550,20 @@ export function removeTags(tags: string[], callback?: Callback) {
 }
 
 /**
- * Sets the current page.
+ * Sets the current page and user chat profile.
  * - Page can be used instead of canonical URL.
  * @param {string} page - The page to set. Do not pass null or undefined. Use `resetPage` to clear.
+ * @param {Record<string, any>} profile - The user chat profile value.
  * @see [ChannelIO: setpage API](https://developers.channel.io/docs/web-channelio#setpage)
  * @see [page Glossary](https://developers.channel.io/docs/page)
  * @see [canonical-url Glossary](https://developers.channel.io/docs/canonical-url)
  */
-export function setPage(page: string) {
-  safeChannelIO('setPage', page);
+export function setPage(page: string, profile?: Record<string, any>) {
+  safeChannelIO('setPage', page, profile);
 }
 
 /**
- * - Reset the page value.
+ * - Reset the page and user chat profile value.
  * - If you use resetPage, a canonical URL is used as the page value.
  * @see [ChannelIO: resetpage API](https://developers.channel.io/docs/web-channelio#resetpage)
  * @see [page Glossary](https://developers.channel.io/docs/page)
