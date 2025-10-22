@@ -5,25 +5,31 @@ on:
     tags:
       - '*'
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   deploy_npm_package_and_typedoc:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Use Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: 18.17.1
+        node-version: 22.21.0
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Update npm to 11.6.2
+      run: npm install -g npm@11.6.2
 
     - name: Install Dependencies
       run: npm ci
 
-    - name: Publish to NPM
+    - name: Publish to npm via OIDC
       run: npm publish
-      env:
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     - name: Generate Typedoc
       run: npm run build:typedoc

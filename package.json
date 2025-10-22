@@ -1,6 +1,6 @@
 {
   "name": "@channel.io/channel-web-sdk-loader",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Official Channel Web SDK Loader",
   "exports": {
     ".": {
