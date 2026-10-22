@@ -19,8 +19,8 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepublishOnly": "npm run build",
-    "build": "npm run build:esm && npm run build:cjs",
+    "prepublishOnly": "pnpm run build",
+    "build": "pnpm run build:esm && pnpm run build:cjs",
     "build:esm": "tsc -p tsconfig.esm.json && mv dist/index.js dist/index.esm.js && mv dist/index.d.ts dist/index.d.mts && cp dist/index.esm.js dist/index.esm.mjs",
     "build:cjs": "tsc -p tsconfig.cjs.json && mv dist/index.js dist/index.cjs.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -78,5 +78,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "pnpm": ">=11.22.0"
   }
 }

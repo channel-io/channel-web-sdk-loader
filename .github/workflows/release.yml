@@ -25,14 +25,21 @@ jobs:
     - name: Update npm to 11.6.2
       run: npm install -g npm@11.6.2
 
-    - name: Install Dependencies
-      run: npm ci
+    - uses: pnpm/action-setup@v6.1.0
+      with:
+        version: 11.24.0
 
+    - name: Install Dependencies
+      run: pnpm install --frozen-lockfile
+
+    # publish만 npm으로 남긴다 — OIDC trusted publishing은 npm CLI 기능이고
+    # pnpm publish가 이를 지원한다는 근거를 찾지 못했다(2026-09-11 조사).
+    # 배포 경로를 깨면 매니저 통일의 목적과 반대가 되므로 이 줄과 위의 npm 핀은 그대로 둔다.
     - name: Publish to npm via OIDC
       run: npm publish
 
     - name: Generate Typedoc
-      run: npm run build:typedoc
+      run: pnpm build:typedoc
 
     - name: Deploy Typedoc to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
